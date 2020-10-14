@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30517.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaPros", "PizzaPros\PizzaPros.csproj", "{F5E1BC17-75D0-40D9-A9B5-201092308754}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaPros", "PizzaPros\PizzaPros.csproj", "{F5E1BC17-75D0-40D9-A9B5-201092308754}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaPros.DataAccess", "PizzaPros.DataAccess\PizzaPros.DataAccess.csproj", "{33B1FCB9-F590-4B90-890C-0ADC8F264583}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaPros.DataAccess", "PizzaPros.DataAccess\PizzaPros.DataAccess.csproj", "{33B1FCB9-F590-4B90-890C-0ADC8F264583}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaPros.Models", "PizzaPros.Models\PizzaPros.Models.csproj", "{1FD1CD2D-E477-43E2-9DAC-F9411817AFE0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaPros.Models", "PizzaPros.Models\PizzaPros.Models.csproj", "{1FD1CD2D-E477-43E2-9DAC-F9411817AFE0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaPros.Utility", "PizzaPros.Utility\PizzaPros.Utility.csproj", "{81E5B452-12F7-4985-B653-5F5B39E46CC1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaPros.Utility", "PizzaPros.Utility\PizzaPros.Utility.csproj", "{81E5B452-12F7-4985-B653-5F5B39E46CC1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
