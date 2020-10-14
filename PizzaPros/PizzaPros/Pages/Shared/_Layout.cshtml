@@ -14,6 +14,7 @@
 </head>
 <body>
     <header>
+        <div class="container">
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-primary box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand text-white" asp-area="" asp-page="/Index">PizzaPros</a>
@@ -27,13 +28,19 @@
                         <li class="nav-item">
                             <a class="nav-link text-white" asp-area="" asp-page="/Index">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-page="/Privacy">Privacy</a>
+                        <li class="nav-item dropdown">
+                            <a href="#" id="navbarDropDown" class="nav-link text-white dropdown-toggle" data-toggle="dropdown">
+                                Admin
+                            </a>
+                            <div class="dropdown-menu bg-primary">
+                                <a class="dropdown-item text-white" asp-page="/Admin/Category/Index">Add Categories</a>                            
+                            </div>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
+        </div>
     </header>
     <div class="container">
         <main role="main" class="pb-3">

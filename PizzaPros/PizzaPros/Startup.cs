@@ -13,6 +13,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using PizzaPros.DataAccess;
 using Microsoft.Extensions.Options;
+using PizzaPros.DataAccess.Data.Repository.IRepository;
+using PizzaPros.DataAccess.Data.Repository;
 
 namespace PizzaPros
 {
@@ -36,7 +38,9 @@ namespace PizzaPros
             services.AddMvc(options => options.EnableEndpointRouting = false).SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_3_0);
 
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
-            
+
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
