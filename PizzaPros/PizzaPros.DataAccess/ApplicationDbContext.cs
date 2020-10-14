@@ -17,6 +17,8 @@ namespace PizzaPros.DataAccess
 
 
         public DbSet<Category> Category { get; set; }
+        public DbSet<Toppings> Toppings { get; set; }
+        public DbSet<ToppingType> ToppingType { get; set; }
 
 
 

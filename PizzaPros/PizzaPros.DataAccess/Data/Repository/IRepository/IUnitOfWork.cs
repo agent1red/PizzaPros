@@ -7,6 +7,8 @@ namespace PizzaPros.DataAccess.Data.Repository.IRepository
     public interface IUnitOfWork : IDisposable
     {
         ICategoryRepository Category { get; }
+        IToppingsRepository Toppings { get; }
+        IToppingTypeRepository ToppingType { get; }
 
         void Save();
     }
