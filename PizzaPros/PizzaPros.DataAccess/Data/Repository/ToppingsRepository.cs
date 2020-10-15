@@ -21,7 +21,7 @@ namespace PizzaPros.DataAccess.Data.Repository
 
         public void Update(Toppings toppings)
         {
-            var toppingsFromDb = _db.Toppings.FirstOrDefault(s => s.Id == toppings.Id);
+            var toppingsFromDb = _db.Toppings.FirstOrDefault(t => t.Id == toppings.Id);
 
             toppingsFromDb.Name = toppings.Name;
             toppingsFromDb.ToppingTypeId = toppings.ToppingTypeId;

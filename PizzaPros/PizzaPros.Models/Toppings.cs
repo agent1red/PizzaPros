@@ -11,7 +11,7 @@ namespace PizzaPros.Models
         [Key]
         public int Id { get; set; }
         [Required]
-        [Display(Name = "Pizza Toppings")]
+        [Display(Name = "Add Pizza Toppings")]
         public string Name { get; set; }
 
         [Required]

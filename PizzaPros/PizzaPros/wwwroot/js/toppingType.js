@@ -13,22 +13,22 @@ function loadList() {
     dataTable = $('#DT-load').DataTable({
 
         "ajax": {
-            "url": "/api/toppings",
+            "url": "/api/toppingtype",
             "type": "GET",
             "datatype": "json"
         },
 
         "columns": [
             { "data": "name", "width": "60%" },
-            { "data": "toppingType.name", "width": "10%" },
+           
             {
                 "data": "id",
                 "render": function (data) {
                     return ` <div class="text-center">
-                                <a href="/Admin/toppings/upsert?id=${data}" class="btn btn-success text-light" style="cursor:pointer; width:100px;">
+                                <a href="/Admin/toppingtype/upsert?id=${data}" class="btn btn-success text-light" style="cursor:pointer; width:100px;">
                                     <i class="far fa-edit"></i> Edit
                                 </a>
-                                <a class="btn btn-danger text-light" style="cursor:pointer; width:100px;" onclick=Delete('/api/toppings/'+${data})>
+                                <a class="btn btn-danger text-light" style="cursor:pointer; width:100px;" onclick=Delete('/api/toppingtype/'+${data})>
                                     <i class="far fa-trash-alt"></i> Delete
                                 </a>
                              </div>
@@ -43,8 +43,6 @@ function loadList() {
         "width": "100%"
     });
 }
-
-
 
 
 function Delete(url) {
