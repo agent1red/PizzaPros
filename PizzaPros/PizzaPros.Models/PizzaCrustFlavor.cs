@@ -5,7 +5,7 @@ using System.Text;
 
 namespace PizzaPros.Models
 {
-    public class PizzaCrust
+    public class PizzaCrustFlavor
     {
         [Key]
         public int Id { get; set; }
@@ -15,12 +15,7 @@ namespace PizzaPros.Models
         [Required]
         [Display(Name = "Flavor Description")]
         public string CrustFlavorDescription { get; set; }
-        [Required]
-        [Display(Name = "Crust Type")]
-        public string CrustType { get; set; }
-        [Required]
-        [Display(Name = "Crust Type Description")]
-        public string CrustTypeDescription { get; set; }
+        
 
     }
 }

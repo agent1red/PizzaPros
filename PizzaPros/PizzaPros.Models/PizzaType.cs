@@ -20,6 +20,19 @@ namespace PizzaPros.Models
         [Range(1, int.MaxValue, ErrorMessage = "Price should be greater than $1")]
         public double Price { get; set; }
 
+        /// <summary>
+        /// pizza ingredients
+        /// </summary>
+
+        public string ToppingOne { get; set; }
+        public string ToppingTwo { get; set; }
+        public string ToppingThree { get; set; }
+        public string ToppingFour { get; set; }
+        public string ToppingFive { get; set; }
+        public string ToppingSix { get; set; }
+        public string ToppingSeven { get; set; }
+        public string ToppingEight { get; set; }
+
         [Display(Name = "Category Type")]
         public int CategoryId { get; set; }
         [ForeignKey("CategoryId")]
@@ -31,9 +44,14 @@ namespace PizzaPros.Models
         public virtual ToppingType ToppingType { get; set; }
 
         [Display(Name = "Crust Type")]
-        public int PizzaCrustId { get; set; }
+        public int PizzaCrustTypeId { get; set; }
         [ForeignKey("PizzaCrustId")]
-        public virtual PizzaCrust PizzaCrust { get; set; }
+        public virtual PizzaCrustType PizzaCrustType { get; set; }
+
+        [Display(Name = "Crust Flavor")]
+        public int PizzaCrustFlavorId { get; set; }
+        [ForeignKey("PizzaCrustFlavorId")]
+        public virtual PizzaCrustType PizzaCrustFlavor { get; set; }
 
         [Display(Name = "Pizza Size")]
         public int PizzaSizeId { get; set; }
