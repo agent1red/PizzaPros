@@ -19,8 +19,8 @@ function loadList() {
         },
 
         "columns": [
-            { "data": "name", "width": "60%" },
-            { "data": "toppingType.name", "width": "10%" },
+            { "data": "crustFlavor", "width": "20%" },
+            { "data": "crustFlavorDescription", "width": "20%" },
             {
                 "data": "id",
                 "render": function (data) {
@@ -40,8 +40,9 @@ function loadList() {
         "language": {
             "emptyTable": "no data found."
         },
-        "width": "100%",
+        "width": "100%"
     });
+
 }
 
 

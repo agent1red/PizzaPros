@@ -23,7 +23,7 @@
                         <label asp-for="ToppingsItemObj.Toppings.Name" ></label>
                     </div>
                     <div class="col-9">
-                        <input class="form-control text-lowercase" asp-for="ToppingsItemObj.Toppings.Name" />
+                        <input class="form-control text-lowercase" onkeyup="this.value = this.value.toLowerCase();" asp-for="ToppingsItemObj.Toppings.Name" />
                         <span class="text-danger" asp-validation-for="ToppingsItemObj.Toppings.Name"></span>
                     </div>
                 </div>
@@ -35,7 +35,7 @@
                         @Html.DropDownListFor(m => m.ToppingsItemObj.Toppings.ToppingTypeId,
                                                     Model.ToppingsItemObj.ToppingTypeList,
                                                     "- Please select a Topping Type -",
-                                                    new { @class = "form-control" })
+                                                    new { @class = "form-control", })
                         <span class="text-danger" asp-validation-for="ToppingsItemObj.Toppings.ToppingTypeId"></span>
                     </div>
                 </div>

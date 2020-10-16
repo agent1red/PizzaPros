@@ -21,7 +21,7 @@
                         <label asp-for="ToppingTypeObj.Name"></label>
                     </div>
                     <div class="col-9">
-                        <input class="form-control text-lowercase" asp-for="ToppingTypeObj.Name" />
+                        <input class="form-control text-lowercase" onkeyup="this.value = this.value.toLowerCase();"  asp-for="ToppingTypeObj.Name" />
                         <span class="text-danger" asp-validation-for="ToppingTypeObj.Name"></span>
                     </div>
                 </div>

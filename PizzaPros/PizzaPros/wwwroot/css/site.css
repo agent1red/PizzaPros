@@ -277,3 +277,14 @@ body {
     width: 210px !important;
     margin: 0 auto;
 }
+
+/*additional css added */
+table tr td:first-child {
+    text-transform: capitalize;
+}
+
+
+table tr td:nth-child(2)::first-letter {
+    text-transform: capitalize;
+}
+
