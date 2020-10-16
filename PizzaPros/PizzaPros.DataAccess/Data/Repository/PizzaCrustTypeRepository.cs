@@ -21,7 +21,7 @@ namespace PizzaPros.DataAccess.Data.Repository
         {
             return _db.PizzaCrustType.Select(i => new SelectListItem()
             {
-                //value of list uses int for palcement
+                //value of list uses int for placement
                 Text = i.CrustType,
                 Value = i.Id.ToString(),
             });

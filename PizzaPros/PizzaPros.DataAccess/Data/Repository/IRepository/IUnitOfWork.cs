@@ -10,6 +10,9 @@ namespace PizzaPros.DataAccess.Data.Repository.IRepository
         IToppingsRepository Toppings { get; }
         IToppingTypeRepository ToppingType { get; }
         IPizzaCrustTypeRepository PizzaCrustType { get; }
+        IPizzaCrustFlavorRepository PizzaCrustFlavor { get; }
+        IPizzaSizeRepository PizzaSize { get; }
+        IPizzaTypeRepository PizzaType { get; }
 
         void Save();
     }

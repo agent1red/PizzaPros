@@ -17,12 +17,18 @@ namespace PizzaPros.DataAccess.Data.Repository
             Toppings = new ToppingsRepository(_db);
             ToppingType = new ToppingTypeRepository(_db);
             PizzaCrustType = new PizzaCrustTypeRepository(_db);
+            PizzaCrustFlavor = new PizzaCrustFlavorRepository(_db);
+            PizzaSize = new PizzaSizeRepository(_db);
+            PizzaType = new PizzaTypeRepository(_db);
         }
 
         public ICategoryRepository Category { get; private set; } // DO NOT set outside of this 
         public IToppingsRepository Toppings { get; private set; } // DO NOT set outside of this 
         public IToppingTypeRepository ToppingType { get; private set; } // DO NOT set outside of this 
         public IPizzaCrustTypeRepository PizzaCrustType { get; private set; } // DO NOT set outside of this 
+        public IPizzaCrustFlavorRepository PizzaCrustFlavor { get; private set; } // DO NOT set outside of this 
+        public IPizzaSizeRepository PizzaSize { get; private set; } // DO NOT set outside of this 
+        public IPizzaTypeRepository PizzaType { get; private set; } // DO NOT set outside of this 
 
         //Implement Save()
         public void Dispose()
