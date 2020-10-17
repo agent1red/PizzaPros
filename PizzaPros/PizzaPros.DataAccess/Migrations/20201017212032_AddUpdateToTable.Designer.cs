@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PizzaPros.DataAccess;
 
 namespace PizzaPros.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201017212032_AddUpdateToTable")]
+    partial class AddUpdateToTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -318,6 +320,9 @@ namespace PizzaPros.DataAccess.Migrations
                     b.Property<int>("PizzaCrustFlavorId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("PizzaCrustId")
+                        .HasColumnType("int");
+
                     b.Property<int>("PizzaCrustTypeId")
                         .HasColumnType("int");
 
@@ -360,7 +365,7 @@ namespace PizzaPros.DataAccess.Migrations
 
                     b.HasIndex("PizzaCrustFlavorId");
 
-                    b.HasIndex("PizzaCrustTypeId");
+                    b.HasIndex("PizzaCrustId");
 
                     b.HasIndex("PizzaSizeId");
 
@@ -473,9 +478,7 @@ namespace PizzaPros.DataAccess.Migrations
 
                     b.HasOne("PizzaPros.Models.PizzaCrustType", "PizzaCrustType")
                         .WithMany()
-                        .HasForeignKey("PizzaCrustTypeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("PizzaCrustId");
 
                     b.HasOne("PizzaPros.Models.PizzaSize", "PizzaSize")
                         .WithMany()

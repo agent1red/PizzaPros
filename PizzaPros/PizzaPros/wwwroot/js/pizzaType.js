@@ -22,7 +22,7 @@ function loadList() {
             { "data": "name", "autoWidth": true  },
             { "data": "description", "autoWidth": true  },
             { "data": "price", "autoWidth": true  },
-            { "data": "category", "autoWidth": true  },
+            { "data": "category.name", "autoWidth": true  },
             {
                 "data": "id",
                 "render": function (data) {

@@ -51,7 +51,7 @@ namespace PizzaPros.Pages.Admin.PizzaType
         }
 
 
-        //Save the image the user uploads to menuItems image folder
+        //Save the image the user uploads to pizzaType image folder
         public IActionResult OnPost()
         {
             string webRootPath = _hostingEnvironment.WebRootPath;

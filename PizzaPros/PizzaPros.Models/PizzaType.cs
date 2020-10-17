@@ -14,7 +14,6 @@ namespace PizzaPros.Models
         public string Name { get; set; }
         [Required]
         public string Description { get; set; }
-        [Required]
         public string Image { get; set; }
         [Required]
         [Range(1, int.MaxValue, ErrorMessage = "Price should be greater than $1")]
@@ -45,7 +44,7 @@ namespace PizzaPros.Models
 
         [Display(Name = "Crust Type")]
         public int PizzaCrustTypeId { get; set; }
-        [ForeignKey("PizzaCrustId")]
+        [ForeignKey("PizzaCrustTypeId")]
         public virtual PizzaCrustType PizzaCrustType { get; set; }
 
         [Display(Name = "Crust Flavor")]
