@@ -1,0 +1,169 @@
+﻿@page
+@model PizzaPros.Pages.Admin.PizzaType.UpsertModel
+
+
+
+
+<form method="post" asp-action="Upsert" enctype="multipart/form-data">
+    <div class="container">
+        <div class="row px-2 mx-2 backgroundWhite border">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @if (Model.PizzaTypeObj.PizzaType.Id != 0)
+            {
+                <input type="hidden" asp-for="PizzaTypeObj.PizzaType.Id" />
+            }
+            <div class="col-12 px-3" style="border-bottom: 1px solid #325d88">
+                <h2 class="text-primary font-weight-light">@(Model.PizzaTypeObj.PizzaType.Id!=0 ? "Update " : "Create ")Pizza Type</h2>
+            </div>
+
+            <div class="col-8 pt-3">
+                <div class="form-group row">
+                    <div class="col-3">
+                        <label asp-for="PizzaTypeObj.PizzaType.Name"></label>
+                    </div>
+                    <div class="col-9">
+                        <input class="form-control" onkeyup="this.value = this.value.toLowerCase();" asp-for="PizzaTypeObj.PizzaType.Name" />
+                        <span class="text-danger" asp-validation-for="PizzaTypeObj.PizzaType.Name"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-3">
+                        <label asp-for="PizzaTypeObj.PizzaType.Price"></label>
+                    </div>
+                    <div class="col-9">
+                        <input class="form-control" onkeyup="this.value = this.value.toLowerCase();" asp-for="PizzaTypeObj.PizzaType.Price" />
+                        <span class="text-danger" asp-validation-for="PizzaTypeObj.PizzaType.Price"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-3">
+                        <label asp-for="PizzaTypeObj.PizzaType.Description"></label>
+                    </div>
+                    <div class="col-9">
+                        <textarea class="form-control"
+                                  onkeyup="this.value = this.value.toLowerCase();"
+                                  asp-for="PizzaTypeObj.PizzaType.Description"
+                                  id="txtDesc"
+                                  style="height:200px;">
+                        </textarea>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-3">
+                        <label asp-for="PizzaTypeObj.PizzaType.Image"></label>
+                    </div>
+                    <div class="col-9">
+                        <input type="file" class="form-control" name="files" id="uploadBox" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-3">
+                        <label asp-for="PizzaTypeObj.PizzaType.CategoryId"></label>
+                    </div>
+                    <div class="col-9">
+                        @Html.DropDownListFor(m => m.PizzaTypeObj.PizzaType.CategoryId,
+                                                Model.PizzaTypeObj.CategoryList,
+                                                "- Please select a Category -",
+                                                new { @class = "form-control" })
+                        <span class="text-danger" asp-validation-for="PizzaTypeObj.PizzaType.CategoryId"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-3">
+                        <label asp-for="PizzaTypeObj.PizzaType.ToppingTypeId"></label>
+                    </div>
+                    <div class="col-9">
+                        @Html.DropDownListFor(m => m.PizzaTypeObj.PizzaType.ToppingTypeId,
+                                                Model.PizzaTypeObj.ToppingTypeList,
+                                                "- Please select a Topping Type -",
+                                                new { @class = "form-control" })
+                        <span class="text-danger" asp-validation-for="PizzaTypeObj.PizzaType.ToppingTypeId"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-3">
+                        <label asp-for="PizzaTypeObj.PizzaType.PizzaCrustTypeId"></label>
+                    </div>
+                    <div class="col-9">
+                        @Html.DropDownListFor(m => m.PizzaTypeObj.PizzaType.PizzaCrustTypeId,
+                                                Model.PizzaTypeObj.PizzaCrustTypeList,
+                                                "- Please select a Crust Type -",
+                                                new { @class = "form-control" })
+                        <span class="text-danger" asp-validation-for="PizzaTypeObj.PizzaType.PizzaCrustTypeId"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-3">
+                        <label asp-for="PizzaTypeObj.PizzaType.PizzaCrustFlavorId"></label>
+                    </div>
+                    <div class="col-9">
+                        @Html.DropDownListFor(m => m.PizzaTypeObj.PizzaType.PizzaCrustFlavorId,
+                                                Model.PizzaTypeObj.PizzaCrustFlavorList,
+                                                "- Please select a Crust Flavor -",
+                                                new { @class = "form-control" })
+                        <span class="text-danger" asp-validation-for="PizzaTypeObj.PizzaType.PizzaCrustFlavorId"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-3">
+                        <label asp-for="PizzaTypeObj.PizzaType.PizzaSizeId"></label>
+                    </div>
+                    <div class="col-9">
+                        @Html.DropDownListFor(m => m.PizzaTypeObj.PizzaType.PizzaSizeId,
+                                                Model.PizzaTypeObj.PizzaSizeList,
+                                                "- Please select a Pizza Size -",
+                                                new { @class = "form-control" })
+                        <span class="text-danger" asp-validation-for="PizzaTypeObj.PizzaType.PizzaSizeId"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+
+                    <div class="col-9 offset-3">
+                        <div class="row">
+                            <div class="col-6">
+
+                                @if (Model.PizzaTypeObj.PizzaType.Id != 0)
+                                {
+                                    <button type="submit" class="btn btn-primary form-control">Update</button>
+                                }
+                                else
+                                {
+                                    <button type="submit" onclick="return ValidateInput()" class="btn btn-primary form-control">Create</button>
+                                }
+                            </div>
+                            <div class="col-6">
+                                <a asp-page="./Index" class="btn btn-success form-control">Back to List</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            @if (Model.PizzaTypeObj.PizzaType != null)
+            {
+                <div class="col-4 p-4">
+                    <img src="@Model.PizzaTypeObj.PizzaType.Image" width="100%" style="border-radius:5px; border:1px solid #bbb9b9" />
+                </div>
+            }
+        </div>
+    </div>
+
+</form>
+
+@section Scripts{
+    <script>
+        tinymce.init({
+            selector: 'textarea',
+            plugins: "lists",
+            menubar: 'file edit format'
+        });
+
+        function ValidateInput() {
+            if (document.getElementById("uploadBox").value == "") {
+                swal("Error", "Please Select an Image", "error")
+                return false;
+            }
+            return true;
+        };
+    </script>
+}

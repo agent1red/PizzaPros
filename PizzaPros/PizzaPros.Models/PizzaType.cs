@@ -51,7 +51,7 @@ namespace PizzaPros.Models
         [Display(Name = "Crust Flavor")]
         public int PizzaCrustFlavorId { get; set; }
         [ForeignKey("PizzaCrustFlavorId")]
-        public virtual PizzaCrustType PizzaCrustFlavor { get; set; }
+        public virtual PizzaCrustFlavor PizzaCrustFlavor { get; set; }
 
         [Display(Name = "Pizza Size")]
         public int PizzaSizeId { get; set; }
