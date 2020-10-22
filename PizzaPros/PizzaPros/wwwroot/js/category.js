@@ -41,7 +41,8 @@ function loadList() {
             "emptyTable": "no data found."
         },
         "width": "100%",
-        "order": [[1, "asc"]]
+        "order": [[1, "asc"]],
+        rowReorder: { dataSrc: 'name' }
     });
 }
 

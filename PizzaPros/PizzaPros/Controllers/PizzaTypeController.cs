@@ -32,6 +32,7 @@ namespace PizzaPros.Controllers
                 data = _unitOfWork.PizzaType
                 .GetAll(null, null, "Category,ToppingType,PizzaCrustType,PizzaCrustFlavor,PizzaSize")
             });
+
         }
 
         [HttpDelete("{id}")]

@@ -17,7 +17,16 @@ namespace PizzaPros.DataAccess.Data.Repository
             _db = db;
         }
 
-     
+        //added 
+        public IEnumerable<SelectListItem> GetToppingListForDropDown()
+        {
+            return _db.Toppings.Select(i => new SelectListItem()
+            {
+                Text = i.Name,
+                Value = i.Id.ToString()
+            });
+        }
+
 
         public void Update(Toppings toppings)
         {

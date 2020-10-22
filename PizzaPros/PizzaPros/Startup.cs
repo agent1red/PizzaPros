@@ -15,6 +15,7 @@ using PizzaPros.DataAccess;
 using Microsoft.Extensions.Options;
 using PizzaPros.DataAccess.Data.Repository.IRepository;
 using PizzaPros.DataAccess.Data.Repository;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
 
 namespace PizzaPros
 {
@@ -37,7 +38,14 @@ namespace PizzaPros
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddMvc(options => options.EnableEndpointRouting = false).SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_3_0);
 
-            services.AddControllersWithViews().AddRazorRuntimeCompilation();
+
+
+
+            services.AddControllersWithViews().AddRazorRuntimeCompilation().AddJsonOptions(o =>
+            {
+                o.JsonSerializerOptions.IgnoreNullValues = true;
+                o.JsonSerializerOptions.Converters.Add(new System.Text.Json.Serialization.JsonStringEnumConverter());
+            });
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 

@@ -116,6 +116,126 @@
                         <span class="text-danger" asp-validation-for="PizzaTypeObj.PizzaType.PizzaSizeId"></span>
                     </div>
                 </div>
+                @*Toppings section that goes with the special pizza*@
+                @*TODO: Add checkbox instead of dropdown*@
+
+                <div class="form-group row">
+                    <div class="col-3">
+                        <label asp-for="PizzaTypeObj.PizzaType.ToppingOneId"></label>
+                    </div>
+                    <div class="col-9">
+                        @Html.DropDownListFor(m => m.PizzaTypeObj.PizzaType.ToppingOneId,
+                                                Model.PizzaTypeObj.ToppingsList,
+                                                "- Please select a Topping -",
+                                                new { @class = "form-control" })
+                        <span class="text-danger" asp-validation-for="PizzaTypeObj.PizzaType.ToppingOneId"></span>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-3">
+                        <label asp-for="PizzaTypeObj.PizzaType.ToppingTwoId"></label>
+                    </div>
+                    <div class="col-9">
+                        @Html.DropDownListFor(m => m.PizzaTypeObj.PizzaType.ToppingTwoId,
+                                                Model.PizzaTypeObj.ToppingsList,
+                                                "- Please select a Topping -",
+                                                new { @class = "form-control" })
+                        <span class="text-danger" asp-validation-for="PizzaTypeObj.PizzaType.ToppingTwoId"></span>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-3">
+                        <label asp-for="PizzaTypeObj.PizzaType.ToppingThreeId"></label>
+                    </div>
+                    <div class="col-9">
+                        @Html.DropDownListFor(m => m.PizzaTypeObj.PizzaType.ToppingThreeId,
+                                                Model.PizzaTypeObj.ToppingsList,
+                                                "- Please select a Topping -",
+                                                new { @class = "form-control" })
+                        <span class="text-danger" asp-validation-for="PizzaTypeObj.PizzaType.ToppingThreeId"></span>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-3">
+                        <label asp-for="PizzaTypeObj.PizzaType.ToppingFourId"></label>
+                    </div>
+                    <div class="col-9">
+                        @Html.DropDownListFor(m => m.PizzaTypeObj.PizzaType.ToppingFourId,
+                                                Model.PizzaTypeObj.ToppingsList,
+                                                "- Please select a Topping -",
+                                                new { @class = "form-control" })
+                        <span class="text-danger" asp-validation-for="PizzaTypeObj.PizzaType.ToppingFourId"></span>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-3">
+                        <label asp-for="PizzaTypeObj.PizzaType.ToppingFiveId"></label>
+                    </div>
+                    <div class="col-9">
+                        @Html.DropDownListFor(m => m.PizzaTypeObj.PizzaType.ToppingFiveId,
+                                                Model.PizzaTypeObj.ToppingsList,
+                                                "- Please select a Topping -",
+                                                new { @class = "form-control" })
+                        <span class="text-danger" asp-validation-for="PizzaTypeObj.PizzaType.ToppingFiveId"></span>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-3">
+                        <label asp-for="PizzaTypeObj.PizzaType.ToppingSixId"></label>
+                    </div>
+                    <div class="col-9">
+                        @Html.DropDownListFor(m => m.PizzaTypeObj.PizzaType.ToppingSixId,
+                                                Model.PizzaTypeObj.ToppingsList,
+                                                "- Please select a Topping -",
+                                                new { @class = "form-control" })
+                        <span class="text-danger" asp-validation-for="PizzaTypeObj.PizzaType.ToppingSixId"></span>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-3">
+                        <label asp-for="PizzaTypeObj.PizzaType.ToppingSevenId"></label>
+                    </div>
+                    <div class="col-9">
+                        @Html.DropDownListFor(m => m.PizzaTypeObj.PizzaType.ToppingSevenId,
+                                                Model.PizzaTypeObj.ToppingsList,
+                                                "- Please select a Topping -",
+                                                new { @class = "form-control" })
+                        <span class="text-danger" asp-validation-for="PizzaTypeObj.PizzaType.ToppingSevenId"></span>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-3">
+                        <label asp-for="PizzaTypeObj.PizzaType.ToppingEightId"></label>
+                    </div>
+                    <div class="col-9">
+                        @Html.DropDownListFor(m => m.PizzaTypeObj.PizzaType.ToppingEightId,
+                                                Model.PizzaTypeObj.ToppingsList,
+                                                "- Please select a Topping -",
+                                                new { @class = "form-control" })
+                        <span class="text-danger" asp-validation-for="PizzaTypeObj.PizzaType.ToppingEightId"></span>
+                    </div>
+                </div>
+
+                <!--testing
+    <div class="form-group row">
+        <div class="col-3">
+            <label asp-for="PizzaTypeObj.PizzaType.ToppingTwo"></label>
+        </div>
+        <div class="col-9">
+            <select asp-for="PizzaTypeObj.PizzaType.ToppingTwo" asp-items="Html.GetEnumSelectList<PizzaPros.Models.PizzaToppings>()"></select>
+            <option selected="selected" value="">please select</option>-->
+                @*<span class="text-danger" asp-validation-for="PizzaTypeObj.PizzaType."></span>*@
+                <!--</div>
+    </div>-->
+
+
                 <div class="form-group row">
 
                     <div class="col-9 offset-3">

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PizzaPros.DataAccess;
 
 namespace PizzaPros.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201020034226_UpdatedToppingTypeWithToppingsID")]
+    partial class UpdatedToppingTypeWithToppingsID
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -327,31 +329,34 @@ namespace PizzaPros.DataAccess.Migrations
                     b.Property<double>("Price")
                         .HasColumnType("float");
 
-                    b.Property<string>("ToppingEightId")
+                    b.Property<string>("ToppingEight")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ToppingFiveId")
+                    b.Property<string>("ToppingFive")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ToppingFourId")
+                    b.Property<string>("ToppingFour")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ToppingOneId")
+                    b.Property<int>("ToppingOne")
                         .HasColumnType("int");
 
-                    b.Property<string>("ToppingSevenId")
+                    b.Property<string>("ToppingSeven")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ToppingSixId")
+                    b.Property<string>("ToppingSix")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ToppingThreeId")
+                    b.Property<string>("ToppingThree")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ToppingTwoId")
+                    b.Property<int>("ToppingTwo")
                         .HasColumnType("int");
 
                     b.Property<int>("ToppingTypeId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ToppingsId1")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -365,6 +370,8 @@ namespace PizzaPros.DataAccess.Migrations
                     b.HasIndex("PizzaSizeId");
 
                     b.HasIndex("ToppingTypeId");
+
+                    b.HasIndex("ToppingsId1");
 
                     b.ToTable("PizzaType");
                 });
@@ -488,6 +495,10 @@ namespace PizzaPros.DataAccess.Migrations
                         .HasForeignKey("ToppingTypeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("PizzaPros.Models.Toppings", "Toppings")
+                        .WithMany()
+                        .HasForeignKey("ToppingsId1");
                 });
 
             modelBuilder.Entity("PizzaPros.Models.Toppings", b =>

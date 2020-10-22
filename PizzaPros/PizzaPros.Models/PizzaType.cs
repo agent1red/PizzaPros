@@ -1,12 +1,16 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PizzaPros.Models
 {
-   public class PizzaType
+  
+    public class PizzaType
     {
         [Key]
         public int Id { get; set; }
@@ -23,14 +27,37 @@ namespace PizzaPros.Models
         /// pizza ingredients
         /// </summary>
 
-        public string ToppingOne { get; set; }
-        public string ToppingTwo { get; set; }
-        public string ToppingThree { get; set; }
-        public string ToppingFour { get; set; }
-        public string ToppingFive { get; set; }
-        public string ToppingSix { get; set; }
-        public string ToppingSeven { get; set; }
-        public string ToppingEight { get; set; }
+        [Display(Name = "Topping 1")]
+        public int ToppingOneId { get; set; }
+        [ForeignKey("ToppingsId")]
+
+        [Display(Name = "Topping 2")]
+        public int ToppingTwoId { get; set; }
+        [ForeignKey("ToppingsId")]
+
+        [Display(Name = "Topping 3")]
+        public string ToppingThreeId { get; set; }
+        [ForeignKey("ToppingsId")]
+
+        [Display(Name = "Topping 4")]
+        public string ToppingFourId { get; set; }
+        [ForeignKey("ToppingsId")]
+
+        [Display(Name = "Topping 5")]
+        public string ToppingFiveId { get; set; }
+        [ForeignKey("ToppingsId")]
+
+        [Display(Name = "Topping 6")]
+        public string ToppingSixId { get; set; }
+        [ForeignKey("ToppingsId")]
+
+        [Display(Name = "Topping 7")]
+        public string ToppingSevenId { get; set; }
+        [ForeignKey("ToppingsId")]
+
+        [Display(Name = "Topping 8")]
+        public string ToppingEightId { get; set; }
+        [ForeignKey("ToppingsId")]
 
         [Display(Name = "Category Type")]
         public int CategoryId { get; set; }
@@ -56,5 +83,12 @@ namespace PizzaPros.Models
         public int PizzaSizeId { get; set; }
         [ForeignKey("PizzaSizeId")]
         public virtual PizzaSize PizzaSize { get; set; }
+
+     
+
     }
+
+   
+
+
 }

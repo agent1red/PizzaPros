@@ -8,8 +8,8 @@ namespace PizzaPros.DataAccess.Data.Repository.IRepository
 {
     public interface IPizzaTypeRepository : IRepository<PizzaType>
     {
-       
 
+        IEnumerable<SelectListItem> GetToppingListForDropDown();
         void Update(PizzaType pizzaType);
     }
 }

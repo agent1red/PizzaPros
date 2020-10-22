@@ -17,7 +17,14 @@ namespace PizzaPros.DataAccess.Data.Repository
             _db = db;
         }
 
-     
+        public IEnumerable<SelectListItem> GetToppingListForDropDown()
+        {
+            return _db.ToppingType.Select(i => new SelectListItem()
+            {
+                Text = i.Name,
+                Value = i.Id.ToString()
+            });
+        }
 
         public void Update(PizzaType pizzaType)
         {
@@ -26,19 +33,20 @@ namespace PizzaPros.DataAccess.Data.Repository
             pizzaTypeFromDb.Name = pizzaType.Name;
             pizzaTypeFromDb.Description = pizzaType.Description;
             pizzaTypeFromDb.Price = pizzaType.Price;
-            pizzaTypeFromDb.ToppingOne = pizzaType.ToppingOne;
-            pizzaTypeFromDb.ToppingTwo = pizzaType.ToppingTwo;
-            pizzaTypeFromDb.ToppingThree = pizzaType.ToppingThree;
-            pizzaTypeFromDb.ToppingFour = pizzaType.ToppingFour;
-            pizzaTypeFromDb.ToppingFive = pizzaType.ToppingFive;
-            pizzaTypeFromDb.ToppingSix = pizzaType.ToppingSix;
-            pizzaTypeFromDb.ToppingSeven = pizzaType.ToppingSeven;
-            pizzaTypeFromDb.ToppingEight = pizzaType.ToppingEight;
+            pizzaTypeFromDb.ToppingOneId = pizzaType.ToppingOneId;
+            pizzaTypeFromDb.ToppingTwoId = pizzaType.ToppingTwoId;
+            pizzaTypeFromDb.ToppingThreeId = pizzaType.ToppingThreeId;
+            pizzaTypeFromDb.ToppingFourId = pizzaType.ToppingFourId;
+            pizzaTypeFromDb.ToppingFiveId = pizzaType.ToppingFiveId;
+            pizzaTypeFromDb.ToppingSixId = pizzaType.ToppingSixId;
+            pizzaTypeFromDb.ToppingSevenId = pizzaType.ToppingSevenId;
+            pizzaTypeFromDb.ToppingEightId = pizzaType.ToppingEightId;
             pizzaTypeFromDb.CategoryId = pizzaType.CategoryId;
             pizzaTypeFromDb.ToppingTypeId = pizzaType.ToppingTypeId;
             pizzaTypeFromDb.PizzaCrustTypeId = pizzaType.PizzaCrustTypeId;
             pizzaTypeFromDb.PizzaCrustFlavorId = pizzaType.PizzaCrustFlavorId;
             pizzaTypeFromDb.PizzaSizeId = pizzaType.PizzaSizeId;
+
 
             if (pizzaType.Image != null)
             {

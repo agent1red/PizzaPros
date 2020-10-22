@@ -22,6 +22,8 @@ namespace PizzaPros.Pages.Admin.PizzaType
             _hostingEnvironment = hostingEnvironment;
         }
 
+
+
         // Object of PizzaType property from new view model
         [BindProperty]
         public PizzaTypeVM PizzaTypeObj { get; set; }
@@ -32,8 +34,10 @@ namespace PizzaPros.Pages.Admin.PizzaType
 
             PizzaTypeObj = new PizzaTypeVM
             {
+                
                 CategoryList = _unitOfWork.Category.GetCategoryListForDropDown(),
                 ToppingTypeList = _unitOfWork.ToppingType.GetToppingTypeListForDropDown(),
+                ToppingsList = _unitOfWork.Toppings.GetToppingListForDropDown(),
                 PizzaCrustTypeList = _unitOfWork.PizzaCrustType.GetPizzaCrustTypeListForDropDown(),
                 PizzaCrustFlavorList = _unitOfWork.PizzaCrustFlavor.GetPizzaCrustFlavorListForDropDown(),
                 PizzaSizeList = _unitOfWork.PizzaSize.GetPizzaSizeListForDropDown(),
@@ -63,6 +67,7 @@ namespace PizzaPros.Pages.Admin.PizzaType
                 {
                     CategoryList = _unitOfWork.Category.GetCategoryListForDropDown(),
                     ToppingTypeList = _unitOfWork.ToppingType.GetToppingTypeListForDropDown(),
+                    ToppingsList = _unitOfWork.Toppings.GetToppingListForDropDown(),
                     PizzaCrustTypeList = _unitOfWork.PizzaCrustType.GetPizzaCrustTypeListForDropDown(),
                     PizzaCrustFlavorList = _unitOfWork.PizzaCrustFlavor.GetPizzaCrustFlavorListForDropDown(),
                     PizzaSizeList = _unitOfWork.PizzaSize.GetPizzaSizeListForDropDown(),

@@ -19,10 +19,19 @@ function loadList() {
         },
 
         "columns": [
-            { "data": "name", "autoWidth": true  },
-            { "data": "description", "autoWidth": true  },
-            { "data": "price", "autoWidth": true  },
-            { "data": "category.name", "autoWidth": true  },
+            { "data": "name", "defaultContent": "", "autoWidth": true  },
+            { "data": "description", "defaultContent": "", "autoWidth": true  },
+            { "data": "price", "defaultContent": "","autoWidth": true  },
+            { "data": "category.name", "defaultContent": "", "autoWidth": true  },
+            { "data": "toppingType.name", "defaultContent": "", "autoWidth": true  },
+            { "data": "toppingOneId", "defaultContent": "", "autoWidth": true  },
+            { "data": "toppingTwoId", "defaultContent": "", "autoWidth": true  },
+            { "data": "toppingThreeId", "defaultContent": "", "autoWidth": true  },
+            { "data": "toppingFourId", "defaultContent": "", "autoWidth": true  },
+            { "data": "toppingFiveId", "defaultContent": "", "autoWidth": true  },
+            { "data": "toppingSixId", "defaultContent": "", "autoWidth": true  },
+            { "data": "toppingSevenId", "defaultContent": "", "autoWidth": true  },
+            { "data": "toppingEightId", "defaultContent": "", "autoWidth": true  },
             {
                 "data": "id",
                 "render": function (data) {
@@ -42,7 +51,10 @@ function loadList() {
         "language": {
             "emptyTable": "no data found."
         },
-        "width": "100%"
+        "width": "100%",
+        "scrollX": 200
+       
+        
     });
 }
 

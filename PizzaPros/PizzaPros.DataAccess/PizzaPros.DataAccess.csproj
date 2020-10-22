@@ -5,8 +5,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20201019173549_AddToppingToPizzaType.cs" />
+    <Compile Remove="Migrations\20201019173549_AddToppingToPizzaType.Designer.cs" />
+    <Compile Remove="Migrations\20201019204431_AddToppingsToPizzaType.cs" />
+    <Compile Remove="Migrations\20201019204431_AddToppingsToPizzaType.Designer.cs" />
+    <Compile Remove="Migrations\20201019212147_AddToppingsToPizzaTypeNotMapped.cs" />
+    <Compile Remove="Migrations\20201019212147_AddToppingsToPizzaTypeNotMapped.Designer.cs" />
+    <Compile Remove="Migrations\20201020033637_UpdatedToppingTypeWithToppingsID.cs" />
+    <Compile Remove="Migrations\20201020033637_UpdatedToppingTypeWithToppingsID.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.8" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.8" />
     <PackageReference Include="Stripe.net" Version="39.16.0" />
   </ItemGroup>
