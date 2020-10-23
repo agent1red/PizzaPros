@@ -25,7 +25,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Pages\Customer\Home\" />
     <Folder Include="Pages\Customer\Cart\" />
     <Folder Include="wwwroot\images\pizzaTypes\" />
   </ItemGroup>
