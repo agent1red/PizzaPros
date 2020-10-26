@@ -10,8 +10,8 @@
  ```diff
  -NOTE: Work in progress. If you fork this repo now you will not be getting the full completed project at this time.  
 ```
-In the meantime, feel free to check on [My Progress](https://github.com/agent1red/PizzaPros/blob/main/TaskList.md).
-Project Status [here].(https://github.com/users/agent1red/projects/1)
+In the meantime, feel free to check on [My Progress](https://github.com/agent1red/PizzaPros/blob/main/TaskList.md).  
+Project Status [here](https://github.com/users/agent1red/projects/1).
 
 ASP.NET Core 3.1 Razor Pages With MVC Continuation Demo 
 
