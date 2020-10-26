@@ -23,6 +23,7 @@ namespace PizzaPros.DataAccess
         public DbSet<PizzaCrustType> PizzaCrustType { get; set; }
         public DbSet<PizzaSize> PizzaSize { get; set; }
         public DbSet<PizzaType> PizzaType { get; set; }
+        public DbSet<ApplicationUser> ApplicationUser { get; set; }
 
 
 
