@@ -6,8 +6,11 @@
  ordering system that has different users such as manager, cook, driver, and customer roles. Each screen facilitates the  
  specific user that is logged in. This project is similar to my other project [SnakPros](https://github.com/agent1red/SnackProsDemo) but there is a fucus more on making  
  a complicated repository pattern, experimenting with JavaScript, and a better go at UI design with bootstrap and modern CSS. 
+ ```diff 
  
-
+ -NOTE: Work in progress. If you fork this repo now you will not be getting the full completed project at this time.  
+ -In the meantime, feel free to check on my progress.
+```
 ASP.NET Core 3.1 Razor Pages With MVC Continuation Demo 
 
 - CRUD Operations in Razor Pages
@@ -43,7 +46,7 @@ ASP.NET Core 3.1 Razor Pages With MVC Continuation Demo
 
 # Instructions For Installing 
 
-**1.** Fork repo to VS Studio 2019 
+**1.** Fork repo to VS Studio 2019  
 **2.** NUGET packages used:  
   - Microsoft.AspNetCore.Authentication.Facebook
   - Microsoft.AspNetCore.Authentication.MicrosoftAccount
