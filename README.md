@@ -7,10 +7,10 @@
  ordering system that has different users such as manager, cook, driver, and customer roles. Each screen facilitates the  
  specific user that is logged in. This project is similar to my other project [SnakPros](https://github.com/agent1red/SnackProsDemo) but there is a fucus more on making  
  a complicated repository pattern, experimenting with JavaScript, and a better go at UI design with bootstrap and modern CSS. 
- 
- NOTE: Work in progress. If you fork this repo now you will not be getting the full completed project at this time.  
- In the meantime, feel free to check on [My Progress](https://github.com/agent1red/PizzaPros/blob/main/TaskList.md).
-
+ ```diff
+ -NOTE: Work in progress. If you fork this repo now you will not be getting the full completed project at this time.  
+ -In the meantime, feel free to check on [My Progress](https://github.com/agent1red/PizzaPros/blob/main/TaskList.md).
+```
 
 
 
