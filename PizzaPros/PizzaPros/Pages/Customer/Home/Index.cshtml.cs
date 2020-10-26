@@ -20,11 +20,13 @@ namespace PizzaPros.Pages.Customer.Home
 
         public IEnumerable<PizzaType> PizzaTypeList { get; set; }
         public IEnumerable<Category> CategoryList { get; set; }
+        public IEnumerable<ToppingType> ToppingTypeList { get; set; }
         public void OnGet()
         {
             PizzaTypeList = _unitOfWork.PizzaType
-                .GetAll(null, null, "Category,ToppingType,PizzaCrustType,PizzaCrustFlavor,PizzaSize");
+                .GetAll(null, q => q.OrderBy(c => c.PizzaSize.Size), "Category,ToppingType,PizzaCrustType,PizzaCrustFlavor,PizzaSize");
             CategoryList = _unitOfWork.Category.GetAll(null, q => q.OrderBy(c => c.DisplayOrder), null);
+            ToppingTypeList = _unitOfWork.ToppingType.GetAll(null, q => q.OrderBy(c => c.Id), null);
         }
     }
 }

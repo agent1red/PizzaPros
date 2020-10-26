@@ -3,90 +3,38 @@
 @{
 }
 
+
 @foreach (var category in Model.CategoryList)
 {
-    @if (Model.PizzaTypeList.Where(c => c.CategoryId == category.Id).Count() > 0)
+    @foreach (var toppingType in Model.ToppingTypeList)
     {
-        <div class="row container pb-3 backgroundWhite">
-            <h2 class="text-primary text-capitalize font-weight-light pl-1"><b>@category.Name</b></h2>
-            <div id="productCarousel" class="carousel slide w-100" data-ride="carousel">
-                <div class="carousel-inner w-100" role="listbox">
-                        @{
-                            var i = 0;
-                    @foreach (var menuItem in Model.PizzaTypeList.Where(c => c.CategoryId == category.Id))
-                    {
-                       var itemClass = i++ == 0 ? "carousel-item active" : "carousel-item";
-                            <div class="@itemClass">
-                                <div class="col-md-4 pb-5">
-                                    <div class="  card-body ">
-                                        <div class="card card-product">
-                                            <div class="rounded-lg">
-                                                <img src="@menuItem.Image" class="card-img-top rounded" />
-                                            </div>
-                                            <div class="card-body d-flex flex-column py-0 ">
-                                                <div class="d-flex form-control mb-5 " style="border:0px;">
-                                                    <div class="pl-2 text-left">
-                                                        <h4 class="card-title text-capitalize"><b>@menuItem.Name</b></h4>
-                                                    </div>
-                                                    <div class="col-8 text-right font-weight-light text-primary @( menuItem.Price > 99 ? "h6" : "h5" )"><b>$@menuItem.Price</b></div>
-                                                </div>
-                                                <a asp-page="Details" class=" btn-product red mt-auto text-center text-decoration-none" asp-route-id="@menuItem.Id">Details</a>
-                                            </div>
-                                        </div>
-                                    </div>
+        var PizzaCatCount = Model.PizzaTypeList.Where(c => c.CategoryId == category.Id).Count();
+        var PizzaTypeCount = Model.PizzaTypeList.Where(t => t.ToppingTypeId == toppingType.Id).Count();
 
-                                </div>
-                            </div>
-                        }
-                    }
-                </div>
-                <a class="carousel-control-prev" href="#productCarousel" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#productCarousel" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon  bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>
-
-        </div>
-    }
-}
-
-
-
-
-
-@*original*@
-
-@*@foreach (var category in Model.CategoryList)
-    {
-        @if (Model.PizzaTypeList.Where(c => c.CategoryId == category.Id).Count() > 0)
+        @if (PizzaCatCount > 0 && PizzaTypeCount <= 3 && PizzaTypeCount > 0 && PizzaTypeCount <= 3)
         {
             <div class="row container pb-3 backgroundWhite">
                 <div class="col-12">
                     <div class="row ">
-                        <h2 class="text-primary font-weight-light pl-1"><b>@category.Name</b></h2>
-
+                        <h2 class="text-primary text-capitalize font-weight-light pl-1"><b>@toppingType.Name @category.Name<span>s</span> </b></h2>
                         <div class="col-12">
                             <div class="row my-3">
-                                @foreach (var menuItem in Model.PizzaTypeList.Where(c => c.CategoryId == category.Id))
+                                @foreach (var menuItem in Model.PizzaTypeList.Where(c => c.ToppingTypeId == toppingType.Id))
                                 {
-
-                                    <div class="col-md-4 pb-5 card-group ">
-                                        <div class="card card-product">
-                                            <div class="rounded-lg">
-                                                <img src="@menuItem.Image" class="card-img-top rounded" />
-                                            </div>
-                                            <div class="card-body d-flex flex-column py-0 ">
-                                                <div class="d-flex form-control mb-5 " style="border:0px;">
-                                                    <div class="pl-2 text-left">
-                                                        <h4 class="card-title"><b>@menuItem.Name.ToUpper()</b></h4>
-                                                    </div>
-                                                    <div class="col-8 text-right font-weight-light text-primary @( menuItem.Price > 99 ? "h6" : "h5" )"><b>$@menuItem.Price</b></div>
+                                    <div class="col-md-4 pb-4">
+                                        <div class="card-body h-100">
+                                            <div class="card card-product  h-100">
+                                                <div class="rounded-lg">
+                                                    <img src="@menuItem.Image" class="card-img-top rounded " />
                                                 </div>
-                                                <a asp-page="Details" class=" btn-product red mt-auto text-center text-decoration-none" asp-route-id="@menuItem.Id">Details</a>
+                                                <div class="card-body d-flex flex-column py-0 ">
+                                                    <ul class="list-group list-group-flush overflow-hidden text-left card-block">
+                                                        <li class="list-group-item border-0 py-0 "><h4 class="card-title text-capitalize "><b>@menuItem.PizzaSize.Size</b></h4></li>
+                                                        <li class="list-group-item border-0"><h4 class="card-title text-capitalize"><b>@menuItem.Name</b></h4></li>
+                                                        <li class="list-group-item border-0"><div class="text-left font-weight-light text-primary @( menuItem.Price > 99 ? "h6" : "h5" )"><b>$@menuItem.Price</b></div></li>
+                                                    </ul>
+                                                    <a asp-page="Details" class=" btn-product red mt-auto text-center text-nowrap text-decoration-none" asp-route-id="@menuItem.Id">Details</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -97,8 +45,55 @@
                 </div>
             </div>
         }
-    }*@
 
+        @if ((PizzaCatCount >= 4) && (PizzaTypeCount >= 4))
+        {
+            <div class="container text-left my-3">
+                <h2 class="text-primary text-capitalize font-weight-light pl-1"><b>@toppingType.Name @category.Name<span>s</span> </b></h2>
+                <div class="row mx-auto my-auto">
+                    <div id="@string.Format("productCarousel{0}",toppingType.Id)" class="productSlide carousel slide carousel-fade w-100" data-ride="carousel">
+                        <div class="carousel-inner w-100" role="listbox">
+                            @{
+                                var i = 0;
+                                @foreach (var menuItem in Model.PizzaTypeList.Where(c => c.ToppingTypeId == toppingType.Id))
+                                {
+                                    var itemClass = i++ == 0 ? "carousel-item active" : "carousel-item";
+                                    <div class="@itemClass">
+                                        <div class="col-md-4">
+                                            <div class="card-body h-100">
+                                                <div class="card card-product h-100">
+                                                    <div class="rounded-lg">
+                                                        <img src="@menuItem.Image" class="card-img-top rounded" />
+                                                    </div>
+                                                    <div class="card-body d-flex flex-column py-0 ">
+                                                        <ul class="list-group list-group-flush overflow-hidden text-left card-block">
+                                                            <li class="list-group-item border-0 py-0 "><h4 class="card-title text-capitalize "><b>@menuItem.PizzaSize.Size</b></h4></li>
+                                                            <li class="list-group-item border-0"><h4 class="card-title text-capitalize"><b>@menuItem.Name</b></h4></li>
+                                                            <li class="list-group-item border-0"><div class="text-left font-weight-light text-primary @( menuItem.Price > 99 ? "h6" : "h5" )"><b>$@menuItem.Price</b></div></li>
+                                                        </ul>
+                                                        <a asp-page="Details" class=" btn-product red mt-auto text-center text-nowrap text-decoration-none" asp-route-id="@menuItem.Id">Details</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                        </div>
+                        <a class="carousel-control-prev w-auto" href="@string.Format("#productCarousel{0}",toppingType.Id)" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next w-auto" href="@string.Format("#productCarousel{0}",toppingType.Id)" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+}
 
 
 @section Scripts{
