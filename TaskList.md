@@ -12,6 +12,9 @@
     - [ ] EmailSender.cs
     - [ ] SD.cs
     - [ ] StripeSettings.cs
+    
+- [x] Create Application Users: 
+  - [x] ApplicationUser.cs
 
 - [x] Create main Models: 
   - [x] Category.cs
