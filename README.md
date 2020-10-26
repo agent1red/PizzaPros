@@ -6,11 +6,28 @@
  ordering system that has different users such as manager, cook, driver, and customer roles. Each screen facilitates the  
  specific user that is logged in. This project is similar to my other project [SnakPros](https://github.com/agent1red/SnackProsDemo) but there is a fucus more on making  
  a complicated repository pattern, experimenting with JavaScript, and a better go at UI design with bootstrap and modern CSS. 
- ```diff 
  
- -NOTE: Work in progress. If you fork this repo now you will not be getting the full completed project at this time.  
- -In the meantime, feel free to check on my progress.
-```
+ NOTE: Work in progress. If you fork this repo now you will not be getting the full completed project at this time.  
+ In the meantime, feel free to check on my progress.
+
+
+Task List Completion 
+
+- [x] Create main Models: 
+  - [x] Create Category.cs
+  - [x] Create PizzaCrustFlavor.cs
+  - [x] Create PizzaCrustType.cs
+  - [x] Create PizzaSize.cs
+  - [x] Create PizzaType.cs
+  - [x] Create Toppings.cs
+  - [x] Create ToppingType.cs
+  - [x] Create Category.cs
+- [x] Create main View Models: 
+  - [x] Create ToppingType.cs
+  - [x] Create PizzaTypeType.cs
+- [ ] This is an incomplete item
+
+
 ASP.NET Core 3.1 Razor Pages With MVC Continuation Demo 
 
 - CRUD Operations in Razor Pages
