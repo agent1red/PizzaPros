@@ -1,3 +1,4 @@
+![PizzaPro Logo](https://github.com/agent1red/PizzaPros/blob/main/PizzaPros/PizzaPros/wwwroot/images/PizzaProLogo2.png)  
 # PizzaPros
 
 
