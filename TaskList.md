@@ -10,7 +10,7 @@
   - [x] Models
   - [x] Utility
     - [ ] EmailSender.cs
-    - [ ] SD.cs
+    - [x] SD.cs
     - [ ] StripeSettings.cs
     
 - [x] Create Application Users: 
@@ -76,5 +76,5 @@
     - [x] Cart:
       - [ ] OrderConfirmation.cshtml
       - [ ] Summary.cshtml
-  - [ ] User:
-    - [ ] Index.cshtml
+  - [x] User:
+    - [x] Index.cshtml
