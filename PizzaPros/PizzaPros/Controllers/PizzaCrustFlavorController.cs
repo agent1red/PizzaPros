@@ -2,14 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PizzaPros.DataAccess.Data.Repository.IRepository;
+using PizzaPros.Utility;
 
 namespace PizzaPros.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Roles = SD.ManagerRole)]
     public class PizzaCrustFlavorController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;

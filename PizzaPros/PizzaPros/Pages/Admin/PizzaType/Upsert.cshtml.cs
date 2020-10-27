@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using PizzaPros.DataAccess.Data.Repository.IRepository;
 using PizzaPros.Models.ViewModels;
+using PizzaPros.Utility;
 
 namespace PizzaPros.Pages.Admin.PizzaType
 {
+    [Authorize(Roles = SD.ManagerRole)]
     public class UpsertModel : PageModel
     {
         private readonly IUnitOfWork _unitOfWork;

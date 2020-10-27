@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using PizzaPros.Utility
+
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -14,7 +17,7 @@
 </head>
 <body>
     <header>
-       
+
         <nav class="navbar navbar-clip navbar-expand-sm navbar-toggleable-sm navbar-dark bg-primary box-shadow mb-3">
             <div class="container">
                 <a asp-area="" asp-page="/Index" class="navbar-brand">
@@ -31,28 +34,30 @@
                         <li class="nav-item">
                             <a class="nav-link text-white" asp-area="" asp-page="/Index">Home</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a href="#" id="navbarDropDown" class="nav-link text-white dropdown-toggle" data-toggle="dropdown">
-                                Admin
-                            </a>
-                            <div class="dropdown-menu bg-primary">
-                                <a class="dropdown-item text-white" asp-page="/Admin/Category/Index">Add Categories</a>
-                                <a class="dropdown-item text-white" asp-page="/Admin/Toppings/Index">Add Toppings</a>
-                                <a class="dropdown-item text-white" asp-page="/Admin/ToppingType/Index">Add Topping Types</a>
-                                <a class="dropdown-item text-white" asp-page="/Admin/CrustFlavor/Index">Add Crust Flavors</a>
-                                <a class="dropdown-item text-white" asp-page="/Admin/CrustType/Index">Add Crust Types</a>
-                                <a class="dropdown-item text-white" asp-page="/Admin/PizzaSize/Index">Add Pizza Sizes</a>
-                                <a class="dropdown-item text-white" asp-page="/Admin/PizzaType/Index">Add Pizzas</a>
-                                <a class="dropdown-item text-white" asp-page="/Admin/User/Index">Add Users</a>
-                            </div>
+                        @if (User.IsInRole(SD.ManagerRole))
+                        {
+                            <li class="nav-item dropdown">
+                                <a href="#" id="navbarDropDown" class="nav-link text-white dropdown-toggle" data-toggle="dropdown">
+                                    Admin
+                                </a>
+                                <div class="dropdown-menu bg-primary">
+                                    <a class="dropdown-item text-white" asp-page="/Admin/Category/Index">Add Categories</a>
+                                    <a class="dropdown-item text-white" asp-page="/Admin/Toppings/Index">Add Toppings</a>
+                                    <a class="dropdown-item text-white" asp-page="/Admin/ToppingType/Index">Add Topping Types</a>
+                                    <a class="dropdown-item text-white" asp-page="/Admin/CrustFlavor/Index">Add Crust Flavors</a>
+                                    <a class="dropdown-item text-white" asp-page="/Admin/CrustType/Index">Add Crust Types</a>
+                                    <a class="dropdown-item text-white" asp-page="/Admin/PizzaSize/Index">Add Pizza Sizes</a>
+                                    <a class="dropdown-item text-white" asp-page="/Admin/PizzaType/Index">Add Pizzas</a>
+                                    <a class="dropdown-item text-white" asp-page="/Admin/User/Index">Add Users</a>
+                                </div>
+                            </li>
+                        }
 
-
-                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
-        
+
     </header>
     <div class="container">
         <main role="main" class="pb-3">
