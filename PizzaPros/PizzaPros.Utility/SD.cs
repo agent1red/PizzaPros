@@ -8,9 +8,9 @@ namespace PizzaPros.Utility
     {
         // define role constants
         public const string ManagerRole = "Manager";
-        public const string DeliverDriver = "DeliverDriver";
-        public const string FrontDesk = "FrontDesk";
-        public const string PizzaMaker = "PizzaMaker";
-        public const string Customer = "Customer";
+        public const string DeliverDriverRole = "DeliverDriver";
+        public const string FrontDeskRole = "FrontDesk";
+        public const string PizzaMakerRole = "PizzaMaker";
+        public const string CustomerRole = "Customer";
     }
 }

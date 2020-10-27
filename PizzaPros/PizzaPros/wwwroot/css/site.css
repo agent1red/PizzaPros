@@ -146,7 +146,10 @@ html {
 body {
     /* Margin bottom by footer height */
     margin-bottom: 60px;
+    overflow-x: hidden;
 }
+
+
 
 .footer {
     position: absolute;
@@ -156,7 +159,7 @@ body {
     line-height: 60px; /* Vertically center the text there */
 }
 
-
+   
 
 .search-background {
     background: url('/images/dust_scratches.png');
@@ -209,6 +212,15 @@ body {
     display: inline-block;
 }
 
+.green {
+    color: #22b24c;
+    border: 2px #22b24c solid;
+}
+
+    .green:hover {
+        color: #fff;
+        background-color: #22b24c;
+    }
 .red {
     color: #e74c3c;
     border: 2px #e74c3c solid;
