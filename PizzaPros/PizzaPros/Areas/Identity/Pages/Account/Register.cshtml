@@ -48,7 +48,7 @@
                             <span asp-validation-for="Input.Email" class="text-danger"></span>
                         </div>
                         <div class="py-2">
-                            <input type="text" asp-for="Input.PhoneNumber" autocomplete="off" placeholder="Home Phone" class="form-control" />
+                            <input id="ContactPhone" type="text" asp-for="Input.PhoneNumber" autocomplete="off" placeholder="Home Phone" class="form-control" />
                             <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
                         </div>
                         <div class="py-2">
@@ -56,7 +56,7 @@
                             <span asp-validation-for="Input.Password" class="text-danger"></span>
                         </div>
                         <div class="py-2">
-                            <input type="password" asp-for="Input.ConfirmPassword" autocomplete="off" placeholder="Confirm Password" class="form-control" />
+                            <input id="ContactPhone" type="password" asp-for="Input.ConfirmPassword" autocomplete="off" placeholder="Confirm Password" class="form-control" />
                             <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
                         </div>
                         @if (User.IsInRole(SD.ManagerRole))
@@ -119,4 +119,12 @@
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
+    <script>
+        $(function () {
+
+            $("#ContactPhone").mask("(999) 999-9999");
+        });
+
+    </script>
 }
