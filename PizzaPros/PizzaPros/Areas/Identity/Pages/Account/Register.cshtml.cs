@@ -13,6 +13,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
+using PizzaPros.Models;
+using PizzaPros.Utility;
 
 namespace PizzaPros.Areas.Identity.Pages.Account
 {
@@ -85,14 +87,67 @@ namespace PizzaPros.Areas.Identity.Pages.Account
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
+            string role = Request.Form["rdUserRole"].ToString();
+
+
             returnUrl = returnUrl ?? Url.Content("~/");
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = new IdentityUser { UserName = Input.Email, Email = Input.Email };
+                var user = new ApplicationUser 
+                { UserName = Input.Email, 
+                  Email = Input.Email,
+                  FirstName = Input.FirstName,
+                  LastName = Input.LastName,
+                  PhoneNumber = Input.PhoneNumber
+                };
                 var result = await _userManager.CreateAsync(user, Input.Password);
+                if(!await _roleManager.RoleExistsAsync(SD.ManagerRole))
+                {
+                    _roleManager.CreateAsync(new IdentityRole(SD.ManagerRole)).GetAwaiter().GetResult();
+                    _roleManager.CreateAsync(new IdentityRole(SD.FrontDeskRole)).GetAwaiter().GetResult();
+                    _roleManager.CreateAsync(new IdentityRole(SD.PizzaMakerRole)).GetAwaiter().GetResult();
+                    _roleManager.CreateAsync(new IdentityRole(SD.DeliverDriverRole)).GetAwaiter().GetResult();
+                    _roleManager.CreateAsync(new IdentityRole(SD.CustomerRole)).GetAwaiter().GetResult();
+                }
                 if (result.Succeeded)
                 {
+
+                    if (role == SD.ManagerRole)
+                    {
+                        await _userManager.AddToRoleAsync(user, SD.ManagerRole);
+                    }
+                    else
+                    {
+                        if (role == SD.FrontDeskRole)
+                        {
+                            await _userManager.AddToRoleAsync(user, SD.FrontDeskRole);
+                        }
+                        else
+                        {
+                            if (role == SD.PizzaMakerRole)
+                            {
+                                await _userManager.AddToRoleAsync(user, SD.PizzaMakerRole);
+                            } 
+                            else
+                            {
+                                if (role == SD.DeliverDriverRole)
+                                {
+                                    await _userManager.AddToRoleAsync(user, SD.DeliverDriverRole);
+                                }
+                                else
+                                {
+                                    await _userManager.AddToRoleAsync(user, SD.CustomerRole);
+                                }
+                            }
+                        }
+                    }
+
+
+
+
+
+
                     _logger.LogInformation("User created a new account with password.");
 
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
