@@ -35,6 +35,17 @@
     
 - [x] Create Initial User Identity
 
+- [x] Create Controllers (API): 
+  - [x] CategoryController.cs
+  - [x] PizzaCrustFlavorController.cs
+  - [x] PizzaCrustTypeController.cs
+  - [x] PizzaSizeController.cs
+  - [x] PizzaTypeController.cs
+  - [x] ToppingsController.cs
+  - [x] ToppingTypeController.cs
+  - [x] UserController.cs
+  
+
 - [x] Create Pages:
   - [x] Admin:
     - [x] Category:
