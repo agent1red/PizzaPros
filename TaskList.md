@@ -15,6 +15,9 @@
     
 - [x] Create Application Users: 
   - [x] ApplicationUser.cs
+  - [x] Register.cs
+  - [x] Register.cshtml
+  
 
 - [x] Create main Models: 
   - [x] Category.cs
