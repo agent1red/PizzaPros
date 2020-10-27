@@ -20,6 +20,8 @@ namespace PizzaPros.DataAccess.Data.Repository
             PizzaCrustFlavor = new PizzaCrustFlavorRepository(_db);
             PizzaSize = new PizzaSizeRepository(_db);
             PizzaType = new PizzaTypeRepository(_db);
+            ApplicationUser = new ApplicationUserRepository(_db);
+            
         }
 
         public ICategoryRepository Category { get; private set; } // DO NOT set outside of this 
@@ -29,6 +31,7 @@ namespace PizzaPros.DataAccess.Data.Repository
         public IPizzaCrustFlavorRepository PizzaCrustFlavor { get; private set; } // DO NOT set outside of this 
         public IPizzaSizeRepository PizzaSize { get; private set; } // DO NOT set outside of this 
         public IPizzaTypeRepository PizzaType { get; private set; } // DO NOT set outside of this 
+        public IApplicationUserRepository ApplicationUser{ get; private set; } // DO NOT set outside of this 
 
         //Implement Save()
         public void Dispose()

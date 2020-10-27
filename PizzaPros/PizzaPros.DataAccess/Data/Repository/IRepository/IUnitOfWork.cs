@@ -13,6 +13,7 @@ namespace PizzaPros.DataAccess.Data.Repository.IRepository
         IPizzaCrustFlavorRepository PizzaCrustFlavor { get; }
         IPizzaSizeRepository PizzaSize { get; }
         IPizzaTypeRepository PizzaType { get; }
+        IApplicationUserRepository ApplicationUserRepository { get; }
 
         void Save();
     }
