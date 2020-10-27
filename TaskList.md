@@ -69,6 +69,9 @@
     - [x] ToppingType:
       - [x] Index.cshtml
       - [x] Upsert.cshtml
+    - [x] User:
+    - [x] Index.cshtml  
+    
   - [x] Customer:
     - [x] Home:
       - [x] Index.cshtml
@@ -76,5 +79,4 @@
     - [x] Cart:
       - [ ] OrderConfirmation.cshtml
       - [ ] Summary.cshtml
-  - [x] User:
-    - [x] Index.cshtml
+  
