@@ -59,4 +59,11 @@ ASP.NET Core 3.1 Razor Pages With MVC Continuation Demo
   - Microsoft.EntityFrameworkCore.SqlServer
   - Microsoft.EntityFrameworkCore.Tools
   - Stripe.net
-
+  
+**3.** Using Microsoft SQL and Manger for database   
+**4.** Update connectionstring to reflect your local database name  
+**5.** Add-migration, update-database to add tables (code first migration)  
+**6.** Make any changes you like or help with issues that I find  
+  
+    
+    
