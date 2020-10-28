@@ -7,7 +7,7 @@
     <div class="border backgroundWhite container">
         <div class="row">
             <div class="col-6">
-                <h2 class="text-primary font-weight-light">Crust Flavor List</h2>
+                <h2 class="text-primary font-weight-light">Crust Type List</h2>
             </div>
             <div class="col-6 text-right">
                 <a asp-page="Upsert" class="btn btn-primary"><i class="far fa-plus-square"> &nbsp; Create New</i></a>
@@ -34,6 +34,17 @@ else
     <p class="text-danger">You do not have access to this resource.</p>
 }
 
+@*specific style to this page only*@
+<style>
+
+    tr td:first-child {
+        text-transform: capitalize;
+    }
+
+    tr td:nth-child(2):first-letter {
+        text-transform: capitalize;
+    }
+</style>
 
 @section Scripts{
     <script src="~/js/crustType.js"></script>

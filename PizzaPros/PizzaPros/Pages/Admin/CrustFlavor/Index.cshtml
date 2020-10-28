@@ -32,7 +32,17 @@ else
     </h1>
     <p class="text-danger">You do not have access to this resource.</p>
 }
+@*specific style to this page only*@
+<style>
 
+    tr td:first-child {
+        text-transform: capitalize;
+    }
+
+    tr td:nth-child(2):first-letter {
+        text-transform: capitalize;
+    }
+</style>
 
 @section Scripts{
     <script src="~/js/crustFlavor.js"></script>

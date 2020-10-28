@@ -32,8 +32,10 @@ namespace PizzaPros.Areas.Identity.Pages.Account.Manage
 
         public class InputModel
         {
-            [Phone]
             [Display(Name = "Phone number")]
+            [MaxLength(14)]
+            [DataType(DataType.PhoneNumber)]
+            [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Not a valid phone number")]
             public string PhoneNumber { get; set; }
         }
 
@@ -79,7 +81,11 @@ namespace PizzaPros.Areas.Identity.Pages.Account.Manage
             var phoneNumber = await _userManager.GetPhoneNumberAsync(user);
             if (Input.PhoneNumber != phoneNumber)
             {
-                var setPhoneResult = await _userManager.SetPhoneNumberAsync(user, Input.PhoneNumber);
+                var setPhoneResult = await _userManager.SetPhoneNumberAsync(user, Input.PhoneNumber
+                                                                                           .Replace(" ", "")
+                                                                                           .Replace("(", "")
+                                                                                           .Replace(")", "")
+                                                                                           .Replace("-", ""));
                 if (!setPhoneResult.Succeeded)
                 {
                     StatusMessage = "Unexpected error when trying to set phone number.";

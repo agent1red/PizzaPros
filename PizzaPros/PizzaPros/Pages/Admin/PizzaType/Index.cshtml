@@ -7,7 +7,7 @@
     <div class="border backgroundWhite container">
         <div class="row">
             <div class="col-6">
-                <h2 class="text-primary font-weight-light">Speacial Pizza List</h2>
+                <h2 class="text-primary font-weight-light">Pizza List</h2>
             </div>
             <div class="col-6 text-right">
                 <a asp-page="Upsert" class="btn btn-primary"><i class="far fa-plus-square"> &nbsp; Create New</i></a>
@@ -45,7 +45,18 @@ else
     <p class="text-danger">You do not have access to this resource.</p>
 }
 
+@*specific style to this page only*@
+<style>
 
+    tr td:first-child, tr td:nth-child(n+4):nth-child(n-5) {
+        text-transform: capitalize;
+    }
+
+    tr td:nth-child(3)::before {
+        content: "\0024";
+    }
+
+</style>
 
 
 

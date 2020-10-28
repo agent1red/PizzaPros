@@ -16,15 +16,15 @@ function loadList() {
         },
 
         "columns": [
-            { "data": "fullName", "width": "25%" },
-            { "data": "email", "width": "25%" },
+            { "data": "fullName", "autoWidth": true },
+            { "data": "email", "autoWidth": true },
             {
                 "data": "phoneNumber", render: function (toFormat) {
                     var tPhone;
                     tPhone = toFormat.toString();
                     tPhone = '(' + tPhone.substring(0, 3) + ') ' + tPhone.substring(3, 6) + '-' + tPhone.substring(6, 10);
                     return tPhone
-                }, "width": "15%"
+                }, "autoWidth": true
             },
 
             {
@@ -46,7 +46,7 @@ function loadList() {
                                     <i class="fas fa-lock"></i> Lock
                                 </a> </div>`;
                     }
-                }, "width": "10%"
+                }, "autoWidth": true
             }
         ],
         "language": {
