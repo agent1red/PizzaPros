@@ -28,6 +28,7 @@
   - [x] Toppings.cs
   - [x] ToppingType.cs
   - [x] Category.cs
+  - [x] ShoppingCart.cs
   
 - [x] Create main View Models: 
   - [x] ToppingType.cs
