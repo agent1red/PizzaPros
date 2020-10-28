@@ -29,7 +29,55 @@
                                                 </div>
                                                 <div class="card-body d-flex flex-column py-0 ">
                                                     <ul class="list-group list-group-flush overflow-hidden text-left card-block">
-                                                        <li class="list-group-item border-0 py-0 "><h4 class="card-title text-capitalize "><b>@menuItem.PizzaSize.Size</b></h4></li>
+                                                        @if (menuItem.PizzaSize.Size == "xlarge")
+                                                        {
+                                                            <li class="list-group-item border-0 py-0">
+                                                                <h4 class="w-25 text-white text-center">
+                                                                    <b>
+                                                                        <span class="dot dot-yellow" style="line-height: normal;">
+                                                                            XL
+                                                                        </span>
+                                                                    </b>
+                                                                </h4>
+                                                            </li>
+                                                        }
+                                                        else if (menuItem.PizzaSize.Size == "large")
+                                                        {
+                                                            <li class="list-group-item border-0 py-0">
+                                                                <h4 class="w-25 text-white text-center">
+                                                                    <b>
+                                                                        <span class="dot dot-green" style="line-height: normal;">
+                                                                            L
+                                                                        </span>
+                                                                    </b>
+                                                                </h4>
+                                                            </li>
+                                                        }
+                                                        else if (menuItem.PizzaSize.Size == "medium")
+                                                        {
+                                                            <li class="list-group-item border-0 py-0">
+                                                                <h4 class="w-25 text-white text-center">
+                                                                    <b>
+                                                                        <span class="dot dot-blue" style="line-height: normal;">
+                                                                            M
+                                                                        </span>
+                                                                    </b>
+                                                                </h4>
+                                                            </li>
+                                                        }
+                                                        else
+                                                        {
+                                                            <li class="list-group-item border-0 py-0">
+                                                                <h4 class="w-25 text-white text-center">
+                                                                    <b>
+                                                                        <span class="dot dot-red" style="line-height: normal;">
+                                                                            S
+                                                                        </span>
+                                                                    </b>
+                                                                </h4>
+                                                            </li>
+                                                        }
+
                                                         <li class="list-group-item border-0"><h4 class="card-title text-capitalize"><b>@menuItem.Name</b></h4></li>
                                                         <li class="list-group-item border-0"><div class="text-left font-weight-light text-primary @( menuItem.Price > 99 ? "h6" : "h5" )"><b>$@menuItem.Price</b></div></li>
                                                     </ul>
@@ -67,7 +115,55 @@
                                                     </div>
                                                     <div class="card-body d-flex flex-column py-0 ">
                                                         <ul class="list-group list-group-flush overflow-hidden text-left card-block">
-                                                            <li class="list-group-item border-0 py-0 "><h4 class="card-title text-capitalize "><b>@menuItem.PizzaSize.Size</b></h4></li>
+                                                            @if (menuItem.PizzaSize.Size == "xlarge")
+                                                            {
+                                                                <li class="list-group-item border-0 py-0">
+                                                                    <h4 class="w-25 text-white text-center">
+                                                                        <b>
+                                                                            <span class="dot dot-yellow" style="line-height: normal;">
+                                                                                XL
+                                                                            </span>
+                                                                        </b>
+                                                                    </h4>
+                                                                </li>
+                                                            }
+                                                            else if (menuItem.PizzaSize.Size == "large")
+                                                            {
+                                                                <li class="list-group-item border-0 py-0">
+                                                                    <h4 class="w-25 text-white text-center">
+                                                                        <b>
+                                                                            <span class="dot dot-green" style="line-height: normal;">
+                                                                                L
+                                                                            </span>
+                                                                        </b>
+                                                                    </h4>
+                                                                </li>
+                                                            }
+                                                            else if (menuItem.PizzaSize.Size == "medium")
+                                                            {
+                                                                <li class="list-group-item border-0 py-0">
+                                                                    <h4 class="w-25 text-white text-center">
+                                                                        <b>
+                                                                            <span class="dot dot-blue" style="line-height: normal;">
+                                                                                M
+                                                                            </span>
+                                                                        </b>
+                                                                    </h4>
+                                                                </li>
+                                                            }
+                                                            else
+                                                            {
+                                                                <li class="list-group-item border-0 py-0">
+                                                                    <h4 class="w-25 text-white text-center">
+                                                                        <b>
+                                                                            <span class="dot dot-red" style="line-height: normal;">
+                                                                                S
+                                                                            </span>
+                                                                        </b>
+                                                                    </h4>
+                                                                </li>
+                                                            }
+
                                                             <li class="list-group-item border-0"><h4 class="card-title text-capitalize"><b>@menuItem.Name</b></h4></li>
                                                             <li class="list-group-item border-0"><div class="text-left font-weight-light text-primary @( menuItem.Price > 99 ? "h6" : "h5" )"><b>$@menuItem.Price</b></div></li>
                                                         </ul>

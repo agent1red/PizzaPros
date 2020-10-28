@@ -476,3 +476,37 @@ body {
         border-right: solid 1px #fff;
         text-decoration: none;
     }
+
+   /* customer home page*/
+.dot {
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    border: none;
+    box-shadow: -3px 5px 5px 0px rgba(0,0,0,0.6);
+    display: inline-block;
+}
+
+/*Pizza size Icons*/
+
+
+/*small*/
+.dot-red {
+    background-color: #EE1C25;
+}
+
+/*medium*/
+.dot-blue {
+    background-color: #00adef;
+}
+
+/*large*/
+.dot-green {
+    background-color: #2BA811;
+}
+
+/*extra large*/
+.dot-yellow {
+    background-color: #fecb02;
+}
+
