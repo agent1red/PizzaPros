@@ -76,7 +76,7 @@
   - [x] Customer:
     - [x] Home:
       - [x] Index.cshtml
-      - [ ] Details.cshtml
+      - [x] Details.cshtml
     - [x] Cart:
       - [ ] OrderConfirmation.cshtml
       - [ ] Summary.cshtml
