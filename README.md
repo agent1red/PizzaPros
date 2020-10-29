@@ -17,7 +17,7 @@ ASP.NET Core 3.1 Razor Pages With MVC Continuation Demo
 
 - CRUD Operations in Razor Pages
 - ASP Handelers
-- Repository Pattern
+- Repository Pattern (unitOfWork)
 - API Controllers using MVC  
 - Server/Client Validation
 - DataBase Migrations (code first approach)
