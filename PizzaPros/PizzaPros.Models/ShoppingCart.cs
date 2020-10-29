@@ -25,7 +25,7 @@ namespace PizzaPros.Models
         [ForeignKey("ApplicationUserId")]
         public virtual ApplicationUser ApplicationUser { get; set; }
 
-        [Range(1,20, ErrorMessage = "You can only add up to 20 items.")]
+        [Range(1,20, ErrorMessage = "You can not have less than 1 or greater than 20 items.")]
         public int Count { get; set; }
     }
 }
