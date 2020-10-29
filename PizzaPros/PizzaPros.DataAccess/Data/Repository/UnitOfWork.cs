@@ -21,7 +21,7 @@ namespace PizzaPros.DataAccess.Data.Repository
             PizzaSize = new PizzaSizeRepository(_db);
             PizzaType = new PizzaTypeRepository(_db);
             ApplicationUser = new ApplicationUserRepository(_db);
-            
+            ShoppingCart = new ShoppingCartRepository(_db);
         }
 
         public ICategoryRepository Category { get; private set; } // DO NOT set outside of this 
@@ -32,6 +32,7 @@ namespace PizzaPros.DataAccess.Data.Repository
         public IPizzaSizeRepository PizzaSize { get; private set; } // DO NOT set outside of this 
         public IPizzaTypeRepository PizzaType { get; private set; } // DO NOT set outside of this 
         public IApplicationUserRepository ApplicationUser { get; private set; } // DO NOT set outside of this 
+        public IShoppingCartRepository ShoppingCart { get; private set; } // DO NOT set outside of this 
 
         //Implement Save()
         public void Dispose()

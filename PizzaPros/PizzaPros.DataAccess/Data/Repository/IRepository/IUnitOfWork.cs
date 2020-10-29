@@ -14,6 +14,7 @@ namespace PizzaPros.DataAccess.Data.Repository.IRepository
         IPizzaSizeRepository PizzaSize { get; }
         IPizzaTypeRepository PizzaType { get; }
         IApplicationUserRepository ApplicationUser { get; }
+        IShoppingCartRepository ShoppingCart { get; }
 
         void Save();
     }

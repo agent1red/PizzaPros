@@ -37,6 +37,14 @@ namespace PizzaPros
             services.AddIdentity<IdentityUser, IdentityRole>()
                 .AddDefaultTokenProviders()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+            //added session
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(10);
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
+            });
+
             services.AddMvc(options => options.EnableEndpointRouting = false).SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_3_0);
             //added path to access denied view - Bug#3 Github Project
             services.ConfigureApplicationCookie(options =>
@@ -75,6 +83,8 @@ namespace PizzaPros
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            //added session 
+            app.UseSession();
 
             app.UseAuthentication();
             app.UseAuthorization();
