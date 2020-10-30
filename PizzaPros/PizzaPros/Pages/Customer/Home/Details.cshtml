@@ -12,101 +12,58 @@
         <div class="container backgroundWhite">
             <div class="card">
                 <div class="card-header bg-light text-light ml-0 row container">
-                    @if (Model.ShopingCartObj.PizzaType.PizzaSize.Size == "xlarge")
-                    {
-                        <div class="col-12 col-md-6">
-                            <div class="w-25 text-white text-center float-left col-md-3">
-                                <h4>
-                                    <b>
-                                        <span class="dot dot-yellow" style="line-height: normal;">
-                                            XL
-                                        </span>
+                    <div class="container-fluid">
+                        <div class="row">
 
-                                    </b>
-                                </h4>
-
-                            </div>
-                            <div class="col-md-9">
+                            @if (Model.ShopingCartObj.PizzaType.PizzaSize.Size == "xlarge")
+                            {
+                                <div class="col-md-4">
+                                    <div class="text-white text-center float-left">
+                                        <h4><b><span class="dot dot-yellow" style="line-height: normal;">XL</span></b></h4>
+                                    </div>
+                                </div>
+                            }
+                            else if (Model.ShopingCartObj.PizzaType.PizzaSize.Size == "large")
+                            {
+                                <div class="col-md-4">
+                                    <div class="text-white text-center float-left">
+                                        <h4><b><span class="dot dot-green" style="line-height: normal;">L</span></b></h4>
+                                    </div>
+                                </div>
+                            }
+                            else if (Model.ShopingCartObj.PizzaType.PizzaSize.Size == "medium")
+                            {
+                                <div class="col-md-4">
+                                    <div class="text-white text-center float-left">
+                                        <h4><b><span class="dot dot-blue" style="line-height: normal;">M</span></b></h4>
+                                    </div>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="col-md-4">
+                                    <div class="text-white text-center float-left">
+                                        <h4><b><span class="dot dot-red" style="line-height: normal;">S</span></b></h4>
+                                    </div>
+                                </div>
+                            }
+                            <div class="col-md-4">
                                 <h1 class="text-primary font-weight-light text-capitalize">@Model.ShopingCartObj.PizzaType.Name</h1>
                             </div>
-                        </div>
-
-                    }
-                    else if (Model.ShopingCartObj.PizzaType.PizzaSize.Size == "large")
-                    {
-                        <div class="col-12 col-md-6">
-                            <div class="w-25 text-white text-center float-left col-md-3">
-                                <h4>
-                                    <b>
-                                        <span class="dot dot-green" style="line-height: normal;">
-                                            L
-                                        </span>
-
-                                    </b>
-                                </h4>
-
-                            </div>
-                            <div class="col-md-9">
-                                <h1 class="text-primary font-weight-light text-capitalize">@Model.ShopingCartObj.PizzaType.Name</h1>
+                            <div class="col-md-4 text-md-right">
+                                <h1 class="text-muted"> @((Model.ShopingCartObj.PizzaType.Price).ToString("c"))</h1>
                             </div>
                         </div>
-
-                    }
-                    else if (Model.ShopingCartObj.PizzaType.PizzaSize.Size == "medium")
-                    {
-                        <div class="col-12 col-md-6">
-                            <div class="w-25 text-white text-center float-left col-md-3">
-                                <h4>
-                                    <b>
-                                        <span class="dot dot-blue" style="line-height: normal;">
-                                            M
-                                        </span>
-
-                                    </b>
-                                </h4>
-
-                            </div>
-                            <div class="col-md-9">
-                                <h1 class="text-primary font-weight-light text-capitalize">@Model.ShopingCartObj.PizzaType.Name</h1>
-                            </div>
-                        </div>
-                    }
-                    else
-                    {
-                        <div class="col-12 col-md-6">
-                            <div class="w-25 text-white text-center float-left col-md-3">
-                                <h4>
-                                    <b>
-                                        <span class="dot dot-red" style="line-height: normal;">
-                                            S
-                                        </span>
-
-                                    </b>
-                                </h4>
-
-                            </div>
-                            <div class="col-md-9">
-                                <h1 class="text-primary font-weight-light text-capitalize">@Model.ShopingCartObj.PizzaType.Name</h1>
-                            </div>
-                        </div>
-                    }
-
-                    <div class="col-12 col-md-6 text-md-right">
-                        <h1 class="text-muted"> @((Model.ShopingCartObj.PizzaType.Price).ToString("c"))</h1>
                     </div>
                 </div>
                 <div class="card-body">
                     <div class="container rounded p-2">
                         <div class="row">
-                            <div class="col-12 col-lg-8">
+                            <div class="col-12 col-lg-4">
                                 <div class="row">
 
                                     <div class="col-12">
-                                        <span class="badge badge-warning h3">@Model.ShopingCartObj.PizzaType.Category.Name</span>
-
-                                        <span class="badge badge-dark">@Model.ShopingCartObj.PizzaType.ToppingType.Name</span>
-
-                                        <p class="capFirstLetter">
+                                        <p class="capFirstLetter h5">
                                             @(Model.ShopingCartObj.PizzaType.PizzaCrustType.CrustType) with
                                             <span class="text-capitalize">@(Model.ShopingCartObj.PizzaType.PizzaCrustFlavor.CrustFlavor)</span> crust flavor.
                                         </p>
@@ -114,74 +71,69 @@
                                         <p class="text-dark">
                                             @Html.Raw(Model.ShopingCartObj.PizzaType.Description)
                                         </p>
-
-
-
-
                                         <div class="row py-4">
-                                            <div class="col-2"><label asp-for="ShopingCartObj.Count" class="h3"></label></div>
-                                            <div class="col-8">
-                                                <input type="text" asp-for="ShopingCartObj.Count" class="form-control rounded w-25" height="40px;" />
+                                            <div class="col-2"><label asp-for="ShopingCartObj.Count" class="h5"></label></div>
+                                            <div class="col-2">
+                                                @Html.DropDownListFor(m => m.ShopingCartObj.Count, Enumerable.Range(1, 20)
+                                               .Select(i => new SelectListItem { Text = i.ToString(), Value = i.ToString() }))
                                                 <span asp-validation-for="ShopingCartObj.Count" class="text-danger"></span>
 
                                             </div>
                                         </div>
                                     </div>
 
-                            </div>
-                        </div>
-                        <div class="col-12 col-lg-4 p-1 text-center">
-                            <img src="@Model.ShopingCartObj.PizzaType.Image" width="100%" class="rounded" />
-                        </div>
-                        <div class="col-12 col-lg-4 p-1 text-center">
-                            <div class="card-body w-75">
-                                <div class="card card-product d-flex flex-column py-0 border-0">
-                                    <h4 class="text-center bg-primary text-white py-2">Toppings Included</h4>
-                                    <ul class="list-group list-group-flush text-left card-block">
-                                        @foreach (var item in Model.PizzaTypeList.Where(t => t.Id == Model.ShopingCartObj.PizzaTypeId))
-                                        {
-                                            @foreach (var toppingItem in Model.ToppingsList.Where(i => i.Id == item.ToppingOneId
-                                                                                            || i.Id == item.ToppingTwoId
-                                                                                            || i.Id == item.ToppingThreeId
-                                                                                            || i.Id == item.ToppingFourId
-                                                                                            || i.Id == item.ToppingFiveId
-                                                                                            || i.Id == item.ToppingSixId
-                                                                                            || i.Id == item.ToppingSevenId
-                                                                                            || i.Id == item.ToppingEightId
-                                                                                                             ))
-                                            {
-                                                <li class="list-group-item border-0 py-0 text-capitalize text-break">@toppingItem.Name</li>
-
-                                            }
-                                        }
-                                    </ul>
-
                                 </div>
                             </div>
-                        </div>
+                            <div class="col-12 col-lg-4 p-1 text-center">
+                                <div class="card-body py-0 w-100">
+                                    <div class="card card-product d-flex flex-column py-0 border-0">
+                                        <h4 class="text-center bg-primary text-white py-2">Toppings Included</h4>
+                                        <ul class="list-group list-group-flush text-left card-block">
+                                            @foreach (var item in Model.PizzaTypeList.Where(t => t.Id == Model.ShopingCartObj.PizzaTypeId))
+                                            {
+                                                @foreach (var toppingItem in Model.ToppingsList.Where(i => i.Id == item.ToppingOneId
+                                                                                              || i.Id == item.ToppingTwoId
+                                                                                              || i.Id == item.ToppingThreeId
+                                                                                              || i.Id == item.ToppingFourId
+                                                                                              || i.Id == item.ToppingFiveId
+                                                                                              || i.Id == item.ToppingSixId
+                                                                                              || i.Id == item.ToppingSevenId
+                                                                                              || i.Id == item.ToppingEightId
+                                                                                                               ))
+                                                {
+                                                    <li class="list-group-item border-0 py-0 text-capitalize text-break">@toppingItem.Name</li>
 
+                                                }
+                                            }
+                                        </ul>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-4 p-1 text-center">
+                                <img src="@Model.ShopingCartObj.PizzaType.Image" width="100%" class="rounded" />
+                            </div>
+
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="card-footer">
-                <div class="row">
-                    <div class="col-12 col-md-6 pb-1 ">
-                        <a asp-page="Index" class=" popup-button btn-square form-control btn-lg" style="height:50px;">Back to List</a>
-                    </div>
-                    <div class="col-12 col-md-6 ">
-                        <button type="submit" class=" popup-button popup-button-blue btn-square form-control btn-lg" style="height:50px;">Add to Cart</button>
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col-12 col-md-6 pb-1 ">
+                            <a asp-page="Index" class=" popup-button btn-square form-control btn-lg" style="height:50px;">Back to List</a>
+                        </div>
+                        <div class="col-12 col-md-6 ">
+                            <button type="submit" class=" popup-button popup-button-blue btn-square form-control btn-lg" style="height:50px;">Add to Cart</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</form>
+    </form>
 </div>
 
 @*css for this page only*@
 <style>
-
-    
 </style>
 
 
