@@ -13,33 +13,26 @@ function loadList() {
     dataTable = $('#DT-load').DataTable({
 
         "ajax": {
-            "url": "/api/PizzaType",
+            "url": "/api/MenuType",
             "type": "GET",
             "datatype": "json"
         },
 
         "columns": [
             { "data": "name", "defaultContent": "", "autoWidth": true  },
-            { "data": "description", "defaultContent": "", "autoWidth": true  },
+            { "data": "description", "defaultContent": "", "width": "30%"  },
             { "data": "price", "defaultContent": "","autoWidth": true  },
             { "data": "category.name", "defaultContent": "", "autoWidth": true  },
             { "data": "toppingType.name", "defaultContent": "", "autoWidth": true  },
-            { "data": "toppingOneId", "defaultContent": "", "autoWidth": true  },
-            { "data": "toppingTwoId", "defaultContent": "", "autoWidth": true  },
-            { "data": "toppingThreeId", "defaultContent": "", "autoWidth": true  },
-            { "data": "toppingFourId", "defaultContent": "", "autoWidth": true  },
-            { "data": "toppingFiveId", "defaultContent": "", "autoWidth": true  },
-            { "data": "toppingSixId", "defaultContent": "", "autoWidth": true  },
-            { "data": "toppingSevenId", "defaultContent": "", "autoWidth": true  },
-            { "data": "toppingEightId", "defaultContent": "", "autoWidth": true  },
+            { "data": "pizzaSize.size", "defaultContent": "", "autoWidth": true  },
             {
                 "data": "id",
                 "render": function (data) {
                     return ` <div class="text-center">
-                                <a href="/Admin/PizzaType/upsert?id=${data}" class="btn btn-success text-light" style="cursor:pointer; width:100px;">
+                                <a href="/Admin/MenuType/upsert?id=${data}" class="btn btn-success text-light" style="cursor:pointer; width:100px;">
                                     <i class="far fa-edit"></i> Edit
                                 </a>
-                                <a class="btn btn-danger text-light" style="cursor:pointer; width:100px;" onclick=Delete('/api/PizzaType/'+${data})>
+                                <a class="btn btn-danger text-light" style="cursor:pointer; width:100px;" onclick=Delete('/api/MenuType/'+${data})>
                                     <i class="far fa-trash-alt"></i> Delete
                                 </a>
                              </div>

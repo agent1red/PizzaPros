@@ -12,13 +12,13 @@ namespace PizzaPros.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PizzaTypeController : Controller
+    public class MenuTypeController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
         //Will be deleting images from server
         private readonly IWebHostEnvironment _hostingEnvironment;
 
-        public PizzaTypeController(IUnitOfWork unitOfWork, IWebHostEnvironment hostEnvironment)
+        public MenuTypeController(IUnitOfWork unitOfWork, IWebHostEnvironment hostEnvironment)
         {
             _unitOfWork = unitOfWork;
             _hostingEnvironment = hostEnvironment;
