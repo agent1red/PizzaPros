@@ -9,6 +9,8 @@
     <form method="post">
         <input type="hidden" asp-for="ShopingCartObj.PizzaTypeId" />
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+ 
+
         <div class="container backgroundWhite">
             <div class="card">
                 <div class="card-header bg-light text-light ml-0 row container">
@@ -63,10 +65,20 @@
                                 <div class="row">
 
                                     <div class="col-12">
-                                        <p class="capFirstLetter h5">
-                                            @(Model.ShopingCartObj.PizzaType.PizzaCrustType.CrustType) with
-                                            <span class="text-capitalize">@(Model.ShopingCartObj.PizzaType.PizzaCrustFlavor.CrustFlavor)</span> crust flavor.
-                                        </p>
+                                        @if (Model.ShopingCartObj.PizzaType.PizzaCrustFlavor.CrustFlavor == "no crust flavor")
+                                        {
+                                            <p class="text-capitalize h5">
+                                                <Span>@Model.ShopingCartObj.PizzaType.PizzaSize.Size </Span> @(Model.ShopingCartObj.PizzaType.PizzaCrustType.CrustType).
+                                            </p>
+
+                                        }
+                                        else
+                                        {
+                                            <p class="capFirstLetter h5">
+                                                <Span>@Model.ShopingCartObj.PizzaType.PizzaSize.Size </Span> <span class="text-capitalize">@(Model.ShopingCartObj.PizzaType.PizzaCrustType.CrustType)</span> with
+                                                <span class="text-capitalize">@(Model.ShopingCartObj.PizzaType.PizzaCrustFlavor.CrustFlavor)</span> crust flavor.
+                                            </p>
+                                        }
 
                                         <p class="text-dark">
                                             @Html.Raw(Model.ShopingCartObj.PizzaType.Description)
@@ -85,21 +97,21 @@
                                 </div>
                             </div>
                             <div class="col-12 col-lg-4 p-1 text-center">
-                                <div class="card-body py-0 w-100">
+                                <div class="card-body py-0 w-100 d-none d-md-block d-lg-none d-lg-block d-xl-none d-xl-block">
                                     <div class="card card-product d-flex flex-column py-0 border-0">
                                         <h4 class="text-center bg-primary text-white py-2">Toppings Included</h4>
                                         <ul class="list-group list-group-flush text-left card-block">
                                             @foreach (var item in Model.PizzaTypeList.Where(t => t.Id == Model.ShopingCartObj.PizzaTypeId))
                                             {
                                                 @foreach (var toppingItem in Model.ToppingsList.Where(i => i.Id == item.ToppingOneId
-                                                                                              || i.Id == item.ToppingTwoId
-                                                                                              || i.Id == item.ToppingThreeId
-                                                                                              || i.Id == item.ToppingFourId
-                                                                                              || i.Id == item.ToppingFiveId
-                                                                                              || i.Id == item.ToppingSixId
-                                                                                              || i.Id == item.ToppingSevenId
-                                                                                              || i.Id == item.ToppingEightId
-                                                                                                               ))
+                                                                                             || i.Id == item.ToppingTwoId
+                                                                                             || i.Id == item.ToppingThreeId
+                                                                                             || i.Id == item.ToppingFourId
+                                                                                             || i.Id == item.ToppingFiveId
+                                                                                             || i.Id == item.ToppingSixId
+                                                                                             || i.Id == item.ToppingSevenId
+                                                                                             || i.Id == item.ToppingEightId
+                                                                                                              ))
                                                 {
                                                     <li class="list-group-item border-0 py-0 text-capitalize text-break">@toppingItem.Name</li>
 
@@ -119,11 +131,11 @@
                 </div>
                 <div class="card-footer">
                     <div class="row">
-                        <div class="col-12 col-md-6 pb-1 ">
-                            <a asp-page="Index" class=" popup-button btn-square form-control btn-lg" style="height:50px;">Back to List</a>
+                        <div class="col-12 col-md-6 pb-1 text-center text-nowrap text-decoration-none ">
+                            <a asp-page="Index" class="btn-product red btn-square form-control btn-lg" style="height:50px; line-height: 1; text-decoration: none;">Back to List</a>
                         </div>
-                        <div class="col-12 col-md-6 ">
-                            <button type="submit" class=" popup-button popup-button-blue btn-square form-control btn-lg" style="height:50px;">Add to Cart</button>
+                        <div class="col-12 col-md-6 text-center text-nowrap">
+                            <button type="submit" class=" btn-product red btn-square form-control btn-lg" style="height:50px; line-height: 1;">Add to Cart</button>
                         </div>
                     </div>
                 </div>
@@ -131,10 +143,6 @@
         </div>
     </form>
 </div>
-
-@*css for this page only*@
-<style>
-</style>
 
 
 @section Scripts{
