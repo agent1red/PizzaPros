@@ -13,6 +13,12 @@
     <Compile Remove="Migrations\20201019212147_AddToppingsToPizzaTypeNotMapped.Designer.cs" />
     <Compile Remove="Migrations\20201020033637_UpdatedToppingTypeWithToppingsID.cs" />
     <Compile Remove="Migrations\20201020033637_UpdatedToppingTypeWithToppingsID.Designer.cs" />
+    <Compile Remove="Migrations\20201029163753_TestForToppings.cs" />
+    <Compile Remove="Migrations\20201029163753_TestForToppings.Designer.cs" />
+    <Compile Remove="Migrations\20201029165519_TestForToppings.cs" />
+    <Compile Remove="Migrations\20201029165519_TestForToppings.Designer.cs" />
+    <Compile Remove="Migrations\20201029165614_TestForToppings.cs" />
+    <Compile Remove="Migrations\20201029165614_TestForToppings.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

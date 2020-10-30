@@ -510,3 +510,13 @@ body {
     background-color: #fecb02;
 }
 
+/*Details page */
+
+.capFirstLetter::first-letter {
+    text-transform: capitalize !important;
+}
+
+    .capFirstLetter::after {
+        content: ''; /* empty string, no specials here */
+        display: inline-block;
+    }

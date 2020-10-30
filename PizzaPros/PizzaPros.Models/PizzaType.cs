@@ -28,35 +28,35 @@ namespace PizzaPros.Models
         /// </summary>
 
         [Display(Name = "Topping 1")]
-        public int ToppingOneId { get; set; }
+        public int? ToppingOneId { get; set; }
         [ForeignKey("ToppingsId")]
 
         [Display(Name = "Topping 2")]
-        public int ToppingTwoId { get; set; }
+        public int? ToppingTwoId { get; set; }
         [ForeignKey("ToppingsId")]
 
         [Display(Name = "Topping 3")]
-        public string ToppingThreeId { get; set; }
+        public int? ToppingThreeId { get; set; }
         [ForeignKey("ToppingsId")]
 
         [Display(Name = "Topping 4")]
-        public string ToppingFourId { get; set; }
+        public int? ToppingFourId { get; set; }
         [ForeignKey("ToppingsId")]
 
         [Display(Name = "Topping 5")]
-        public string ToppingFiveId { get; set; }
+        public int? ToppingFiveId { get; set; }
         [ForeignKey("ToppingsId")]
 
         [Display(Name = "Topping 6")]
-        public string ToppingSixId { get; set; }
+        public int? ToppingSixId { get; set; }
         [ForeignKey("ToppingsId")]
 
         [Display(Name = "Topping 7")]
-        public string ToppingSevenId { get; set; }
+        public int? ToppingSevenId { get; set; }
         [ForeignKey("ToppingsId")]
 
         [Display(Name = "Topping 8")]
-        public string ToppingEightId { get; set; }
+        public int? ToppingEightId { get; set; }
         [ForeignKey("ToppingsId")]
 
         [Display(Name = "Category Type")]
@@ -84,8 +84,8 @@ namespace PizzaPros.Models
         [ForeignKey("PizzaSizeId")]
         public virtual PizzaSize PizzaSize { get; set; }
 
-     
-
+        [NotMapped]
+        public virtual Toppings Toppings { get; set; }
     }
 
    

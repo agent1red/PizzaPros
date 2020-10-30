@@ -79,7 +79,7 @@
                                                         }
 
                                                         <li class="list-group-item border-0"><h4 class="card-title text-capitalize"><b>@menuItem.Name</b></h4></li>
-                                                        <li class="list-group-item border-0"><div class="text-left font-weight-light text-primary @( menuItem.Price > 99 ? "h6" : "h5" )"><b>$@menuItem.Price</b></div></li>
+                                                        <li class="list-group-item border-0"><div class="text-left font-weight-light text-primary @( menuItem.Price > 99 ? "h6" : "h5" )"><b>@(menuItem.Price.ToString("c"))</b></div></li>
                                                     </ul>
                                                     <a asp-page="Details" class=" btn-product red mt-auto text-center text-nowrap text-decoration-none" asp-route-id="@menuItem.Id">Details</a>
                                                 </div>

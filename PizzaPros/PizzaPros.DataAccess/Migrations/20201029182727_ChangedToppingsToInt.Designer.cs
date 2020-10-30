@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PizzaPros.DataAccess;
 
 namespace PizzaPros.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201029182727_ChangedToppingsToInt")]
+    partial class ChangedToppingsToInt
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -329,28 +331,28 @@ namespace PizzaPros.DataAccess.Migrations
                     b.Property<double>("Price")
                         .HasColumnType("float");
 
-                    b.Property<int?>("ToppingEightId")
+                    b.Property<int>("ToppingEightId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("ToppingFiveId")
+                    b.Property<int>("ToppingFiveId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("ToppingFourId")
+                    b.Property<int>("ToppingFourId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("ToppingOneId")
+                    b.Property<int>("ToppingOneId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("ToppingSevenId")
+                    b.Property<int>("ToppingSevenId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("ToppingSixId")
+                    b.Property<int>("ToppingSixId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("ToppingThreeId")
+                    b.Property<int>("ToppingThreeId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("ToppingTwoId")
+                    b.Property<int>("ToppingTwoId")
                         .HasColumnType("int");
 
                     b.Property<int>("ToppingTypeId")

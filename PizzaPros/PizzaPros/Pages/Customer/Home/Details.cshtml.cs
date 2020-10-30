@@ -25,13 +25,21 @@ namespace PizzaPros.Pages.Customer.Home
 
         [BindProperty]
         public ShoppingCart ShopingCartObj { get; set; }
+
+        public IEnumerable<PizzaType> PizzaTypeList { get; set; }
+        public IEnumerable<Toppings> ToppingsList { get; set; }
         public void OnGet(int id)
         {
             ShopingCartObj = new ShoppingCart()
             {
+
                 PizzaType = _unitOfWork.PizzaType.GetFirstOrDefault(includeProperties: "Category,ToppingType,PizzaCrustType,PizzaCrustFlavor,PizzaSize", filter: c => c.Id == id),
                 PizzaTypeId = id
             };
+            
+            PizzaTypeList = _unitOfWork.PizzaType
+               .GetAll(null, q => q.OrderBy(c => c.PizzaSize.Size), "Category,ToppingType,PizzaCrustType,PizzaCrustFlavor,PizzaSize");
+            ToppingsList = _unitOfWork.Toppings.GetAll(null, q => q.OrderBy(c => c.Id), null);
         }
 
         public IActionResult OnPost()
