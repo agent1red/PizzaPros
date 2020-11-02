@@ -29,7 +29,33 @@
   - [x] ToppingType.cs
   - [x] Category.cs
   - [x] ShoppingCart.cs
+  - [x] OrderDetails.cs
+  - [x] OrderHeader.cs
   
+- [x] Create Repository Files:
+  - [x] IApplicationuserRepository.cs
+  - [x] ICategoryRepository.cs
+  - [x] IOrderDetailsRepository.cs
+  - [x] IOrderHeaderRepository.cs
+  - [x] IPizzaCrustFlavorRepository.cs
+  - [x] IPizzaCrustTypeRepository.cs
+  - [x] IPizzaSizeRepository.cs
+  - [x] IRepository.cs
+  - [x] IShoppingCartRepository.cs
+  - [x] IToppingsRepository.cs
+  - [x] IUnitOfWork.cs
+    - [x] ApplicationuserRepository.cs
+    - [x] CategoryRepository.cs
+    - [x] OrderDetailsRepository.cs
+    - [x] OrderHeaderRepository.cs
+    - [x] PizzaCrustFlavorRepository.cs
+    - [x] PizzaCrustTypeRepository.cs
+    - [x] PizzaSizeRepository.cs
+    - [x] Repository.cs
+    - [x] ShoppingCartRepository.cs
+    - [x] ToppingsRepository.cs
+    - [x] UnitOfWork.cs
+
 - [x] Create main View Models: 
   - [x] ToppingTypeVM.cs
   - [x] PizzaTypeTypeVM.cs
@@ -80,5 +106,6 @@
       - [x] Details.cshtml
     - [x] Cart:
       - [ ] OrderConfirmation.cshtml
+      - [x] Index.cshtml
       - [ ] Summary.cshtml
   
