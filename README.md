@@ -35,7 +35,7 @@ ASP.NET Core 3.1 Razor Pages With MVC Continuation Demo
 - DOM manipulation with JQuery
 - Ordering System with Order Details and Management
 - Using Stripe payment system
-- UI designed with Bootsrap 4 and CSS
+- UI designed with Bootsrap 4 and CSS  
 
 ## File Structure:
 - PizzaPros => Main project with wwwroot, controllers, and Razor Pages
