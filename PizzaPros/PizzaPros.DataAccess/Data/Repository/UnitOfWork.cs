@@ -22,17 +22,22 @@ namespace PizzaPros.DataAccess.Data.Repository
             PizzaType = new PizzaTypeRepository(_db);
             ApplicationUser = new ApplicationUserRepository(_db);
             ShoppingCart = new ShoppingCartRepository(_db);
+            OrderHeader = new OrderHeaderRepository(_db);
+            OrderDetails = new OrderDetailsRepository(_db);
         }
 
-        public ICategoryRepository Category { get; private set; } // DO NOT set outside of this 
-        public IToppingsRepository Toppings { get; private set; } // DO NOT set outside of this 
-        public IToppingTypeRepository ToppingType { get; private set; } // DO NOT set outside of this 
-        public IPizzaCrustTypeRepository PizzaCrustType { get; private set; } // DO NOT set outside of this 
-        public IPizzaCrustFlavorRepository PizzaCrustFlavor { get; private set; } // DO NOT set outside of this 
-        public IPizzaSizeRepository PizzaSize { get; private set; } // DO NOT set outside of this 
-        public IPizzaTypeRepository PizzaType { get; private set; } // DO NOT set outside of this 
-        public IApplicationUserRepository ApplicationUser { get; private set; } // DO NOT set outside of this 
-        public IShoppingCartRepository ShoppingCart { get; private set; } // DO NOT set outside of this 
+        // DO NOT set outside of this 
+        public ICategoryRepository Category { get; private set; } 
+        public IToppingsRepository Toppings { get; private set; } 
+        public IToppingTypeRepository ToppingType { get; private set; }
+        public IPizzaCrustTypeRepository PizzaCrustType { get; private set; }
+        public IPizzaCrustFlavorRepository PizzaCrustFlavor { get; private set; }
+        public IPizzaSizeRepository PizzaSize { get; private set; }
+        public IPizzaTypeRepository PizzaType { get; private set; }
+        public IApplicationUserRepository ApplicationUser { get; private set; }
+        public IShoppingCartRepository ShoppingCart { get; private set; }
+         public IOrderHeaderRepository OrderHeader { get; private set; }
+        public IOrderDetailsRepository OrderDetails { get; private set; }
 
         //Implement Save()
         public void Dispose()
