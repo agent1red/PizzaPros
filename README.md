@@ -3,8 +3,8 @@
 
 
  This project was completed using my knowledge of ASP.NET Core Razor pages with MVC. I liked doing the Repository Pattern
- with other projects so much I had to create a new one to solidify my understanding. This application is a typical pizza  
- ordering system that has different users such as manager, cook, driver, and customer roles. Each screen facilitates the  
+ with other projects so much I had to create a new one to solidify my understanding. This application is a typical pizza ordering system
+ that has different users such as manager, cook, driver, and customer roles. Each screen facilitates the  
  specific user that is logged in. This project is similar to my other project [SnakPros](https://github.com/agent1red/SnackProsDemo) but there is a fucus more on making  
  a complicated repository pattern, experimenting with JavaScript, and a better go at UI design with bootstrap and modern CSS. 
  ```diff
