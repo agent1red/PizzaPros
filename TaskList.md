@@ -31,8 +31,9 @@
   - [x] ShoppingCart.cs
   
 - [x] Create main View Models: 
-  - [x] ToppingType.cs
-  - [x] PizzaTypeType.cs
+  - [x] ToppingTypeVM.cs
+  - [x] PizzaTypeTypeVM.cs
+  - [x] OrderDetailsVM.cs
     
 - [x] Create Initial User Identity
 
