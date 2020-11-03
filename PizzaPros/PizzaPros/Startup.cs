@@ -64,11 +64,19 @@ namespace PizzaPros
                 o.JsonSerializerOptions.Converters.Add(new System.Text.Json.Serialization.JsonStringEnumConverter());
             });
 
+
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 
             //Added stripe configuration ref appsettings.json file 
             services.Configure<StripeSettings>(Configuration.GetSection("Stripe"));
+
+            //Added Facebook login service 
+            services.AddAuthentication().AddFacebook(facebookOptions =>
+            {
+                facebookOptions.AppId = Configuration["Authentication:Facebook:AppId"];
+                facebookOptions.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
