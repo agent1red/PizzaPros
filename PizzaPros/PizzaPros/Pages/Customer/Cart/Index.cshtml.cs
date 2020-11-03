@@ -62,6 +62,7 @@ namespace PizzaPros.Pages.Customer.Cart
 
         }
 
+        //Custom Handlers for adding, removing,  deleting cart items 
         public IActionResult OnPostPlus(int cartId)
         {
             var cart = _unitOfWork.ShoppingCart.GetFirstOrDefault(c => c.Id == cartId);

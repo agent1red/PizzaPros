@@ -16,6 +16,8 @@ using Microsoft.Extensions.Options;
 using PizzaPros.DataAccess.Data.Repository.IRepository;
 using PizzaPros.DataAccess.Data.Repository;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
+using PizzaPros.Utility;
+using Stripe;
 
 namespace PizzaPros
 {
@@ -64,6 +66,9 @@ namespace PizzaPros
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
+
+            //Added stripe configuration ref appsettings.json file 
+            services.Configure<StripeSettings>(Configuration.GetSection("Stripe"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -90,6 +95,8 @@ namespace PizzaPros
             app.UseAuthorization();
 
             app.UseMvc();
+
+            StripeConfiguration.ApiKey = Configuration.GetSection("Stripe")["SecretKey"];
         }
     }
 }
