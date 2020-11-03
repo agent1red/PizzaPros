@@ -105,7 +105,7 @@
       - [x] Index.cshtml
       - [x] Details.cshtml
     - [x] Cart:
-      - [ ] OrderConfirmation.cshtml
+      - [x] OrderConfirmation.cshtml
       - [x] Index.cshtml
-      - [ ] Summary.cshtml
+      - [x] Summary.cshtml
   
