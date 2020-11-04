@@ -71,19 +71,20 @@ namespace PizzaPros
             //Added stripe configuration ref appsettings.json file 
             services.Configure<StripeSettings>(Configuration.GetSection("Stripe"));
 
-            //Added Facebook login service 
+            //Added Facebook, Microsoft, google login service 
             services.AddAuthentication().AddFacebook(facebookOptions =>
             {
                 facebookOptions.AppId = Configuration["Authentication:Facebook:AppId"];
                 facebookOptions.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
-            });
-
-            services.AddAuthentication().AddMicrosoftAccount(options =>
+            }).AddMicrosoftAccount(options =>
             {
                 options.ClientId = Configuration["Authentication:Microsoft:ClientId"];
                 options.ClientSecret = Configuration["Authentication:Microsoft:ClientSecret"];
+            }).AddGoogle(options =>
+            {
+                options.ClientId = Configuration["Authentication:Google:ClientId"];
+                options.ClientSecret = Configuration["Authentication:Google:ClientSecret"];
             });
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
