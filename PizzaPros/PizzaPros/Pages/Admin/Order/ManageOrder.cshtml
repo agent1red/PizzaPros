@@ -1,0 +1,95 @@
+﻿@page
+@model PizzaPros.Pages.Admin.Order.ManageOrderModel
+@using PizzaPros.Utility
+
+
+
+<h1 class="text-primary py-3">Manage Order's</h1>
+
+<form method="post">
+    @if (Model.orderDetailsVM.Count > 0)
+    {
+        <div class="container row bg-white p-2 border mb-3 rounded">
+            @foreach (var item in Model.orderDetailsVM)
+            {
+                <div class="col-12 pb-3 pt-3 mt-4 border rounded">
+                    <div class="bg-white  ">
+                        <div class="row" id="demo">
+                            <div class="col-4">
+                                Order Number : @item.OrderHeader.Id
+                                <ul class="text-info">
+                                    @foreach (var details in item.OrderDetails)
+                                    {
+                                        <li>@details.Name x @details.Count</li>
+                                    }
+                                </ul>
+                            </div>
+                            <div class="col-4 pb-2">
+                                <div class="input-group pb-2">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">Pickup Time</span>
+                                    </div>
+                                    <p hidden class="exp1"> @item.OrderHeader.PickUpTime</p>
+                                    <input type="text" class=" border rounded form-control" readonly value="@item.OrderHeader.PickUpTime" />
+                                </div>
+                                @{
+                                    var comments = item.OrderHeader.Comments;
+                                    if (comments == null || comments.Trim().Length == 0)
+                                    {
+                                        item.OrderHeader.Comments = "No Instructions.";
+                                    }
+                                }
+                                <textarea asp-for="@item.OrderHeader.Comments" readonly class="rounded border form-control" style="width:100%;height:75px;"></textarea>
+                            </div>
+                            <div class="col-3 offset-1 d-flex align-content-center">
+                                <div class="col-12">
+
+                                    @*added timer to track countdown to order in progress*@
+                                    <div class="col-12 badge bg-primary timer text-center text-wrap font-weight-light mb-4" style="font-size:14px;"></div>
+                                    @*end update*@
+
+                                    @if (item.OrderHeader.Status.Equals(PizzaPros.Utility.SD.StatusSubmitted))
+                                    {
+                                        <button type="submit" class="btn btn-primary form-control mb-2" asp-page-handler="OrderPrepare" asp-route-OrderId="@item.OrderHeader.Id">
+                                            <i class="fas fa-check"></i> &nbsp; Start Cooking
+                                        </button>
+                                    }
+                                    else
+                                    {
+                                        if (item.OrderHeader.Status.Equals(PizzaPros.Utility.SD.StatusInProcess))
+                                        {
+                                            <button type="submit" class="btn btn-success form-control mb-3" asp-page-handler="OrderReady" asp-route-OrderId="@item.OrderHeader.Id">
+                                                <i class="fas fa-flag-checkered"></i> &nbsp; Order Ready
+                                            </button>
+                                        }
+                                    }
+
+
+                                    <button type="submit" class="btn btn-warning form-control mb-3" asp-page-handler="OrderCancel" asp-route-OrderId="@item.OrderHeader.Id">
+                                        <i class="fas fa-times"></i> &nbsp; Cancel Order
+                                    </button>
+                                    <button type="submit" class="btn btn-danger form-control mb-3" asp-page-handler="OrderRefund" asp-route-OrderId="@item.OrderHeader.Id">
+                                        <i class="fas fa-times"></i> &nbsp; Refund Order
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    }
+    else
+    {
+        <div class="card">
+            <div class="card-body text-center bg-light"><h2>No Orders yet..</h2> </div>
+        </div>
+    }
+
+</form>
+
+@section Scripts{
+    <script src="~/js/countTimer.js"></script>
+}

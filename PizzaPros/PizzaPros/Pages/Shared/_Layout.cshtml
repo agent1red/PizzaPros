@@ -58,6 +58,23 @@
                             </li>
                         }
 
+                        @*Visable only to manager, kitchen and front desk *@
+
+                        @if (User.IsInRole(SD.ManagerRole) || User.IsInRole(SD.PizzaMakerRole))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-white" asp-page="/Admin/Order/ManageOrder">Manager Order</a>
+                            </li>
+                        }
+
+                        @if (User.IsInRole(SD.ManagerRole) || User.IsInRole(SD.FrontDeskRole))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-white" asp-page="/Admin/Order/OrderList">Order Pickup</a>
+                            </li>
+                        }
+
+                        @*-----End*@
 
                         //added for customer view
                         @*Visable only to customer *@
