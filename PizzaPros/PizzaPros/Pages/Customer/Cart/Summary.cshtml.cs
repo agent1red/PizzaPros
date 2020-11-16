@@ -51,6 +51,7 @@ namespace PizzaPros.Pages.Customer.Cart
             foreach (var cartList in detailCart.listCart)
             {
                 cartList.PizzaType = _unitOfWork.PizzaType.GetFirstOrDefault(m => m.Id == cartList.PizzaTypeId);
+                cartList.PizzaType.Category = _unitOfWork.Category.GetFirstOrDefault(c => c.Id == cartList.PizzaType.CategoryId);
 
                 //order total 
 
@@ -87,6 +88,10 @@ namespace PizzaPros.Pages.Customer.Cart
                                                                 .PickUpTime
                                                                 .ToShortTimeString()
                                                                 );
+            detailCart.OrderHeader.PhoneNumber = detailCart.OrderHeader.PhoneNumber.Replace(" ", "")
+                                        .Replace("(", "")
+                                        .Replace(")", "")
+                                        .Replace("-", "");
 
             List<OrderDetails> orderDetailslist = new List<OrderDetails>();
             _unitOfWork.OrderHeader.Add(detailCart.OrderHeader);

@@ -18,14 +18,14 @@
         <input asp-for="@Model.detailCart.listCart[0].ApplicationUserId" hidden />
     <div class="backgroundWhiteBorder">
         <div class="container">
-            <div class="card">
+            <div class="card card-product">
                 <div class="card-header bg-light text-primary ml-0 row container">
-                    <div class="col-6">
+                    <div class="col-6 h4 py-4 text-nowrap">
                         <i class="fa fa-shopping-cart"></i> &nbsp;
                         Order Summary
                     </div>
                     <div class="col-6 text-right">
-                        <a asp-page="Index" class="btn popup-button-primary">Back to Cart</a>
+                        <a asp-page="Index" class="btn-product red text-decoration-none">Back to Cart</a>
                     </div>
                 </div>
                 <div class="card-body">
@@ -42,7 +42,7 @@
                                         <label>Name</label>
                                     </div>
                                     <div class="col-9">
-                                        <input id="txtName" asp-for="@Model.detailCart.OrderHeader.PickupName" type="text" class="form-control" />
+                                        <input id="txtName" asp-for="@Model.detailCart.OrderHeader.PickupName" type="text" class="form-control text-capitalize" />
                                     </div>
                                 </div>
                                 <div class="row my-1">
@@ -58,7 +58,7 @@
                                         <label>Pickup Date</label>
                                     </div>
                                     <div class="col-9">
-                                        <input id="datepicker" value="" asp-for="@Model.detailCart.OrderHeader.PickUpDate" type="text" class="form-control" />
+                                        <input id="datepicker" autocomplete="off" value="" asp-for="@Model.detailCart.OrderHeader.PickUpDate" type="text" class="form-control" />
                                     </div>
                                 </div>
                                 <div class="row my-1">
@@ -66,7 +66,7 @@
                                         <label>Pickup Time</label>
                                     </div>
                                     <div class="col-9">
-                                        <input id="timepicker" value="" asp-for="@Model.detailCart.OrderHeader.PickUpTime" type="text" class="form-control" />
+                                        <input id="timepicker" data-time-format="h:i A" value="" asp-for="@Model.detailCart.OrderHeader.PickUpTime" type="text" class="form-control" />
                                     </div>
                                 </div>
                                 <div class="row my-1">
@@ -91,7 +91,7 @@
                                     {
                                     <li class="list-group-item d-flex justify-content-between">
                                         <div>
-                                            <h6 class="my-0">@details.PizzaType.Name</h6>
+                                            <h6 class="my-0 text-capitalize text-primary">@details.PizzaType.Name @details.PizzaType.Category.Name</h6>
                                             <small class="text-muted">Quantity: @details.Count</small>
                                         </div>
                                         @{ subTotal = (details.PizzaType.Price * details.Count);}
@@ -130,7 +130,7 @@
                                 
                             </script>
                             <script>document.getElementsByClassName("stripe-button-el")[0].style.display = 'none';</script>
-                            <button type="submit" id="btnPlaceOrder" onclick="return validateInput()" value="Place Order" class="btn popup-button form-control">Place Order</button>
+                            <button type="submit" id="btnPlaceOrder" onclick="return validateInput()" value="Place Order" class="btn-product green text-decoration-none form-control" style="line-height: 1;">Place Order</button>
                         </div>
                     </div>
                 </div>
@@ -142,42 +142,6 @@
 </form>
 
 @section Scripts {
-    <script>
-        $(function () {
-            $("#datepicker").datepicker({
-                minDate: 1,
-                maxDate: "+1W"
-            });
-            $("#timepicker").timepicker({
-                minTime: "11:00 AM",
-                maxTime: "9:00 PM",
-                step: "15"
-            })
-        });
-
-        function validateInput() {
-            var time = document.getElementById("timepicker").value;
-            var dt = document.getElementById("datepicker").value;
-            var name = document.getElementById("txtName").value;
-            var phone = document.getElementById("txtPhone").value;
-
-            if (dt.toString() == '') {
-                swal("Error", "Please select a Pickup Date", "error");
-                return false;
-            }
-            if (time.toString() == '') {
-                swal("Error", "Please select a Pickup Time", "error");
-                return false;
-            }
-            if (name.toString() == '') {
-                swal("Error", "Please select a Pickup Name", "error");
-                return false;
-            }
-            if (phone.toString() == '') {
-                swal("Error", "Please enter your Phone Number", "error");
-                return false;
-            }
-        }
-    </script>
+    <script src="~/js/summary.js"></script>
 }
 

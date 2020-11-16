@@ -34,6 +34,9 @@ namespace PizzaPros.Models
         [Display(Name = "Pickup Name")]
         public string PickupName { get; set; }
 
+        [MaxLength(14)]
+        [DataType(DataType.PhoneNumber)]
+        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Not a valid phone number")]
         [Display(Name = "Phone Number")]
         public string PhoneNumber { get; set; }
 
