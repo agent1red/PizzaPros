@@ -25,10 +25,11 @@ namespace PizzaPros.Pages.Admin.Order
         [BindProperty]
         public List<OrderDetailsVM> orderDetailsVM { get; set; }
 
-
+ 
         public void OnGet()
         {
             orderDetailsVM = new List<OrderDetailsVM>();
+
 
             List<OrderHeader> OrderHeaderList = _unitOfWork.OrderHeader.GetAll(o => o.Status == SD.StatusSubmitted
                                                                                  || o.Status == SD.StatusInProcess)

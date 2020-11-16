@@ -15,7 +15,7 @@
                 <div class="col-12 pb-3 pt-3 mt-4 border rounded">
                     <div class="bg-white  ">
                         <div class="row" id="demo">
-                            <div class="col-4">
+                            <div class="col-12 col-sm-4">
                                 Order Number : @item.OrderHeader.Id
                                 <ul class="text-info">
                                     @foreach (var details in item.OrderDetails)
@@ -24,12 +24,12 @@
                                     }
                                 </ul>
                             </div>
-                            <div class="col-4 pb-2">
+                            <div class="col-12 col-sm-4 pb-2">
                                 <div class="input-group pb-2">
                                     <div class="input-group-append">
-                                        <span class="input-group-text">Pickup Time</span>
+                                        <span class="input-group-text">Pickup Time:</span>
                                     </div>
-                                    <p hidden class="exp1"> @item.OrderHeader.PickUpTime</p>
+                                    <p hidden class="exp1"> @item.OrderHeader.PickUpTime </p>
                                     <input type="text" class=" border rounded form-control" readonly value="@item.OrderHeader.PickUpTime" />
                                 </div>
                                 @{
@@ -41,11 +41,14 @@
                                 }
                                 <textarea asp-for="@item.OrderHeader.Comments" readonly class="rounded border form-control" style="width:100%;height:75px;"></textarea>
                             </div>
-                            <div class="col-3 offset-1 d-flex align-content-center">
+                            <div class="col-12 col-sm-3 offset-sm-1 d-flex  align-content-center">
                                 <div class="col-12">
 
                                     @*added timer to track countdown to order in progress*@
-                                    <div class="col-12 badge bg-primary timer text-center text-wrap font-weight-light mb-4" style="font-size:14px;"></div>
+                                    <div class="progress">
+                                        <div class="progressTimer progress-bar progress-bar-striped progress-bar-animated"></div>
+                                    </div>
+                                    <div class="col-12 timer text-center text-wrap font-weight-light mb-4" style="font-size:14px;"></div>
                                     @*end update*@
 
                                     @if (item.OrderHeader.Status.Equals(PizzaPros.Utility.SD.StatusSubmitted))
