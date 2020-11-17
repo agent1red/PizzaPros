@@ -12,7 +12,7 @@
         <div class="container row bg-white p-2 border mb-3 rounded">
             @foreach (var item in Model.orderDetailsVM)
             {
-                <div class="col-12 pb-3 pt-3 mt-4 border rounded">
+                <div class="col-12 card-product pb-3 pt-3 mt-4 border rounded">
                     <div class="bg-white  ">
                         <div class="row" id="demo">
                             <div class="col-12 col-sm-4">
@@ -20,7 +20,7 @@
                                 <ul class="text-info">
                                     @foreach (var details in item.OrderDetails)
                                     {
-                                        <li>@details.Name x @details.Count</li>
+                                        <li id="orderName" class="d-flex text-capitalize text-nowrap">@details.Name  <span class="text-lowercase ml-1"> x @details.Count</span></li>
                                     }
                                 </ul>
                             </div>
@@ -36,10 +36,17 @@
                                     var comments = item.OrderHeader.Comments;
                                     if (comments == null || comments.Trim().Length == 0)
                                     {
+
                                         item.OrderHeader.Comments = "No Instructions.";
+                                        <textarea hidden asp-for="@item.OrderHeader.Comments" readonly class="rounded border form-control" style="width:100%;height:75px;"></textarea>
+
+                                    }
+                                    else
+                                    {
+                                        <textarea asp-for="@item.OrderHeader.Comments" readonly class="rounded border form-control" style="width:100%;height:75px;"></textarea>
+
                                     }
                                 }
-                                <textarea asp-for="@item.OrderHeader.Comments" readonly class="rounded border form-control" style="width:100%;height:75px;"></textarea>
                             </div>
                             <div class="col-12 col-sm-3 offset-sm-1 d-flex  align-content-center">
                                 <div class="col-12">
@@ -66,8 +73,6 @@
                                             </button>
                                         }
                                     }
-
-
                                     <button type="submit" class="btn btn-warning form-control mb-3" asp-page-handler="OrderCancel" asp-route-OrderId="@item.OrderHeader.Id">
                                         <i class="fas fa-times"></i> &nbsp; Cancel Order
                                     </button>
@@ -93,6 +98,16 @@
 
 </form>
 
+@*specific style to this page only*@
+@*<style>
+
+    li{
+        text-transform: capitalize;
+    }
+
+</style>*@
+
 @section Scripts{
     <script src="~/js/countTimer.js"></script>
+ 
 }

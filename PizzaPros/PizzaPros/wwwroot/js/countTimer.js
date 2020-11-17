@@ -30,15 +30,17 @@ function countdown() {
             progress[i].style.visibility = "hidden";
 
         } else {
+            clearInterval(countdown);
             if (minutes == 0) {
                 x[i].innerHTML = seconds + "s";
             } else if (hours == 0) {
                 progressTimer[i].style.cssText = "width: 25%";
-                progressTimer[i].classList.add("bg-danger");
+                progressTimer[i].classList.toggle("bg-danger");
                 x[i].innerHTML = minutes + "m " + seconds + "s";
             } else if (days == 0) {
                 progressTimer[i].style.cssText = "width: 50%";
-                progressTimer[i].classList.add("bg-warning");
+                progressTimer[i].classList.add("bg-success");
+                progressTimer[i].classList.toggle("bg-warning");
                 x[i].innerHTML = hours + "h " + minutes + "m " + seconds + "s";
             } else {
                 progressTimer[i].style.cssText = "width: 100%";
