@@ -56,7 +56,11 @@ namespace PizzaPros.Areas.Identity.Pages.Account
             [Required]
             [EmailAddress]
             public string Email { get; set; }
-            [Required]
+
+            [Required(ErrorMessage = "You must provide a phone number")]
+            [MaxLength(14)]
+            [DataType(DataType.PhoneNumber)]
+            [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Not a valid phone number")]
             [Display(Name = "Phone Number")]
             public string PhoneNumber { get; set; }
             [Required]
@@ -145,7 +149,10 @@ namespace PizzaPros.Areas.Identity.Pages.Account
                     Email = Input.Email,
                     FirstName = Input.FirstName,
                     LastName = Input.LastName,
-                    PhoneNumber = Input.PhoneNumber
+                    PhoneNumber = Input.PhoneNumber.Replace(" ", "")
+                                        .Replace("(", "")
+                                        .Replace(")", "")
+                                        .Replace("-", "")
 
                 };
 
