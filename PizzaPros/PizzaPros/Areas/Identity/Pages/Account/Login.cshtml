@@ -53,7 +53,9 @@
         <input asp-for="Input.Email" placeholder="Email..." type="email" required="" autofocus="" class="mb-1 form-control" />
         <input asp-for="Input.Password" placeholder="Password..." type="password" required="" class="form-control" />
         <button type="submit" class="btn btn-success btn-block"><i class="fas fa-sign-in-alt"></i> Sign in</button>
-        <a id="forgot-password" asp-page="./ForgotPassword" class="pb-2">Forgot your password?</a>
+        @* Updated to remain hidden for this demo. Do not have an email service client at this time *@
+        <a id="forgot-password" asp-page="./ForgotPassword" class="pb-2" hidden>Forgot your password?</a>
+        @* End Update 11/18/2020 *@
         <div asp-validation-summary="All" class="text-danger"></div>
         <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl" class="btn btn-primary text-white" id="btn-signup"><i class="fas fa-user-plus"></i> Register as a new user</a>
     </form>
