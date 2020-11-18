@@ -134,7 +134,13 @@
                                 <a class="nav-link text-white" asp-page="/Admin/Order/OrderList">Order Pickup</a>
                             </li>
                         }
-
+                        @* Added to include customer order history tab *@
+                        @if (User.IsInRole(SD.CustomerRole))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-white" asp-page="/Admin/Order/OrderList">Order History</a>
+                            </li>
+                        }
                         @*-----End*@
 
                         //added for customer view
