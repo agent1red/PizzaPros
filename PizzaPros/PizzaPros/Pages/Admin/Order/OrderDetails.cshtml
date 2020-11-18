@@ -72,16 +72,12 @@
                         </div>
                     </div>
                 }
-
-
             </div>
-
-
 
             <div class="col-lg-5 col-12">
                 <h4 class="d-flex justify-content-between align-content-center mb-3">
                     <span class="text-muted">Order ID: </span>
-                    <span class="badge badge-secondary badge-pill">@Model.OrderDetailsVM.OrderHeader.Id</span>
+                    <span class="badge badge-secondary badge-pill dot-red text-white" style="line-height: 1.5;">@Model.OrderDetailsVM.OrderHeader.Id</span>
                 </h4>
                 <ul class="list-group mb-3">
 
@@ -95,13 +91,10 @@
                             <span class="text-muted">$@(details.Price * details.Count)</span>
                         </li>
                     }
-
-
                     <li class="list-group-item d-flex justify-content-between bg-light">
                         <span class="text-info"> Total (USD)</span>
                         <strong class="text-info">$@Model.OrderDetailsVM.OrderHeader.OrderTotal.ToString("#,##0.00")</strong>
                     </li>
-
                 </ul>
                 @if (Model.OrderDetailsVM.OrderHeader.Status.Equals(SD.StatusReady) && (User.IsInRole(SD.ManagerRole) || User.IsInRole(SD.FrontDeskRole)))
                 {
@@ -125,12 +118,8 @@
                             <button type="submit" class="btn btn-danger form-control" asp-page-handler="OrderRefund" asp-route-OrderId="@Model.OrderDetailsVM.OrderHeader.Id"><i class="fas fa-times"></i> Refund Order</button>
                         </div>
                     </div>
-
                 }
-
-
             </div>
-
         </div>
     </div>
 </form>
