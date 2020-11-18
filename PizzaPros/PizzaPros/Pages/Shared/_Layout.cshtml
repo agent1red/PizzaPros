@@ -20,7 +20,68 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.10.0/jquery.timepicker.css" />
 
 </head>
-<body cz-shortcut-listen="true" style="padding-top: 140px;">
+<body class="search-background" cz-shortcut-listen="true" style="padding-top: 140px;">
+    <div id="instructions" style="padding-top:0px;">
+        <button type="button" class="btn-primary" data-toggle="modal" data-target="#exampleModal"> <i class="fas fa-info-circle" aria-hidden="true"></i> </button>
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="container col-12">
+                        <div class="row">
+                            <div class="col-2 pt-4">
+                                <img src="~/images/PizzaProLogo2.png" height="190" alt="CoolBrand" class="rotated">
+                            </div>
+                            <div class="col-2"></div>
+                            <div class="col-4 pt-4">
+                                <h2 class="modal-title pt-2" id="exampleModalLabel" style="color: #5e9ca0; text-align: center;"><strong>PizzaPros Ordering System - Demo</strong></h2>
+                            </div>
+                            <div class="col-4">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <h4><span style="color: #993300; padding-bottom:5px;">PizzaPros Demo Ordering System&nbsp;</span><strong style="color: #993300;"><a style="color: #993300;" href="https://github.com/agent1red/PizzaPros" target="_blank" rel="noopener">GitHub Repo Here</a></strong></h4>
+                    <h4><span style="color: #008080;">Website Overview:</span></h4>
+                    <ul>
+                        <li>
+                            Following are the Admin User Account that exists by default <i style="color:dodgerblue">(Password: Admin123*)</i>:
+                            <ul>
+                                <li>Manager User&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<i style="color:dodgerblue">admin@gmail.com</i></li>
+                                <li>Front Desk User&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<i style="color:dodgerblue">front@gmail.com</i></li>
+                                <li>Pizza Maker&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<i style="color:dodgerblue">kitchen@gmail.com</i></li>
+                                <li>Customer User&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<i style="color:dodgerblue">customer@gmail.com</i></li>
+                            </ul>
+                        </li>
+                        <li>You can create new accounts as you wish! If you prefer to create any accounts please login using the Admin/Manager User and navigate to Users inside Content Management.&nbsp;</li>
+                        @*<li>Create/Edit/Delete functionalities have been disabled for all users inside Content Management (Admin) portal to avoid misuse of website.</li>*@
+                        <li>If any Manager account locks any other user using Content Management portal, they will be able to lock them for only 2 min and system will unlock them after 2min.</li>
+                    </ul>
+                    <h4 style="color: #2e6c80;">How to use the demo website:</h4>
+                    <ul>
+                        <li>User can place order after adding items to cart.</li>
+                        <li>Once order is placed you can login as Manager/Admin User and Manage orders and see the flow of application.</li>
+                        <li>
+                            In order to place order you can use any test credit card number supported by stripe.
+                            <ul>
+                                <li>
+                                    A default example is 4242 4242 4242 4242, valid date , any 3 digit CVV, and any zip code.
+                                </li>
+                            </ul>
+                        </li>
+                        <li>Admin user can register new employees/admins for the website.</li>
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
     <header>
 
         <nav class="navbar fixed-top navbar-expand-sm navbar-toggleable-sm navbar-dark bg-primary box-shadow mb-3">

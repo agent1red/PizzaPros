@@ -533,6 +533,8 @@ body {
     margin-left: calc((100% - 100vw) / 2); /* then remove the gap to the left of the container with this equation */
 }
 
+/*Instructions Modal */
+
 /*
 Access denied page */
 .full-width {
