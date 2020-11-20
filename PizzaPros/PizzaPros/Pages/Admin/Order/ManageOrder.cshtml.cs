@@ -14,7 +14,7 @@ using Stripe;
 
 namespace PizzaPros.Pages.Admin.Order
 {
-    [Authorize(Roles = SD.ManagerRole)]
+    
     public class ManageOrderModel : PageModel
     {
         private readonly IUnitOfWork _unitOfWork;
