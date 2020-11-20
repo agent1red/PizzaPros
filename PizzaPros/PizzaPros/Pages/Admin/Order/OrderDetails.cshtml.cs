@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using PizzaPros.DataAccess.Data.Repository.IRepository;
@@ -12,6 +13,7 @@ using Stripe;
 
 namespace PizzaPros.Pages.Admin.Order
 {
+    [Authorize]
     public class OrderDetailsModel : PageModel
     {
         private readonly IUnitOfWork _unitOfWork;

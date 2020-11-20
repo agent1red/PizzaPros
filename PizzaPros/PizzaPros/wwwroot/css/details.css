@@ -1,0 +1,15 @@
+﻿/*Details CSS */
+
+.capFirstLetter::first-letter {
+    text-transform: capitalize !important;
+}
+
+.capFirstLetter::after {
+    content: ''; /* empty string, no specials here */
+    display: inline-block;
+}
+
+#inner-wrap {
+    width: 100vw; /* make it 100% of the viewport width (vw) */
+    margin-left: calc((100% - 100vw) / 2); /* then remove the gap to the left of the container with this equation */
+}

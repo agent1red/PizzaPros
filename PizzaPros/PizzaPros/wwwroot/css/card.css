@@ -1,0 +1,36 @@
+﻿/*Card CSS*/
+
+.card {
+    max-width: 100%;
+}
+
+.card-title {
+    line-height: 1;
+}
+
+
+
+.card-block {
+    white-space: normal;
+}
+
+
+.card-product {
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+    border: 1px solid #e6e6e6;
+    border-radius: 1px;
+    width: 100%;
+}
+
+.card-img-top {
+    max-width: 100% !important;
+    height: auto !important;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    clip-path: polygon(0 0, 100% 0, 100% 69%, 0 88%);
+}
+
+
+
+
