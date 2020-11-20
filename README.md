@@ -57,6 +57,7 @@ ASP.NET Core 3.1 Razor Pages With MVC Continuation Demo
   - Microsoft.AspNetCore.Mvc.NewtonsoftJson
   - Microsoft.EntityFrameworkCore.SqlServer
   - Microsoft.EntityFrameworkCore.Tools
+  - Microsoft.Extensions.Configuration.AzureKeyVault
   - Stripe.net
   
 **3.** Using Microsoft SQL and Manger for database   
