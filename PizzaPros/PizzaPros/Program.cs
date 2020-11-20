@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Azure.Identity;
 
 namespace PizzaPros
 {
@@ -18,6 +19,14 @@ namespace PizzaPros
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
+            .ConfigureAppConfiguration((hostingContext, builder)=>
+            {
+                if (hostingContext.HostingEnvironment.IsDevelopment())
+                {
+                    return;
+                }
+                builder.AddAzureKeyVault("https://appsettingsmanagersvault.vault.azure.net/");
+            })
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
