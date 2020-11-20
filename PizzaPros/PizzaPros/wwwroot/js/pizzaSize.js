@@ -24,10 +24,10 @@ function loadList() {
                 "data": "id",
                 "render": function (data) {
                     return ` <div class="text-center">
-                                <a href="/Admin/PizzaSize/upsert?id=${data}" class="btn btn-success text-light" style="cursor:pointer; width:100px;">
+                                <a href="/Admin/PizzaSize/upsert?id=${data}" class="btn btn-success text-light disabled" style="cursor:pointer; width:100px;">
                                     <i class="far fa-edit"></i> Edit
                                 </a>
-                                <a class="btn btn-danger text-light" style="cursor:pointer; width:100px;" onclick=Delete('/api/PizzaSize/'+${data})>
+                                <a class="btn btn-danger text-light disabled" style="cursor:pointer; width:100px;" onclick=Delete('/api/PizzaSize/'+${data})>
                                     <i class="far fa-trash-alt"></i> Delete
                                 </a>
                              </div>
