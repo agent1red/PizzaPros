@@ -18,6 +18,7 @@ using PizzaPros.DataAccess.Data.Repository;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
 using PizzaPros.Utility;
 using Stripe;
+using PizzaPros.DataAccess.Data.Initializer;
 
 namespace PizzaPros
 {
@@ -66,7 +67,7 @@ namespace PizzaPros
 
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
-
+            services.AddScoped<IDbInitializer, DbInitializer>();
 
             //Added stripe configuration ref appsettings.json file 
             services.Configure<StripeSettings>(Configuration.GetSection("Stripe"));
@@ -88,7 +89,7 @@ namespace PizzaPros
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IDbInitializer dbInitializer)
         {
             if (env.IsDevelopment())
             {
@@ -106,7 +107,7 @@ namespace PizzaPros
             app.UseStaticFiles();
             //added session 
             app.UseSession();
-
+            dbInitializer.Initialize();
             app.UseAuthentication();
             app.UseAuthorization();
 

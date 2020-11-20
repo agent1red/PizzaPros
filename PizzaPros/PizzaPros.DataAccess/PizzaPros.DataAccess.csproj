@@ -30,10 +30,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Data\Initializer\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\PizzaPros.Models\PizzaPros.Models.csproj" />
     <ProjectReference Include="..\PizzaPros.Utility\PizzaPros.Utility.csproj" />
   </ItemGroup>
