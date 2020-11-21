@@ -5,11 +5,16 @@ This project was completed using my knowledge of ASP.NET Core Razor pages with M
 with other projects so much I had to create a new one to solidify my understanding. This application is a typical pizza ordering system
 that has different users such as manager, cook, driver, and customer roles. Each screen facilitates the specific user that is logged in. 
 This project is similar to my other project [SnakPros](https://github.com/agent1red/SnackProsDemo) but there is a fucus more on making a complicated repository pattern,    experimenting with JavaScript, and a better go at UI design with bootstrap and modern CSS. 
- 
+
+
  ```diff
- -NOTE: Work in progress. If you fork this repo now you will not be getting the full completed project at this time.  
+ -NOTE: Work in progress. Project is nearly complete. 
 ```
-In the meantime, feel free to check on [My Progress](https://github.com/agent1red/PizzaPros/blob/main/TaskList.md).  
+
+Website is now up! 
+Azure Deployed [HERE](https://pizzapros.azurewebsites.net).   
+ 
+Feel free to check on [My Progress](https://github.com/agent1red/PizzaPros/blob/main/TaskList.md).  
 Project Status [here](https://github.com/users/agent1red/projects/1).
 
 ASP.NET Core 3.1 Razor Pages With MVC Continuation Demo 
@@ -64,6 +69,7 @@ ASP.NET Core 3.1 Razor Pages With MVC Continuation Demo
 **4.** Update connectionstring to reflect your local database name  
 **5.** Add-migration, update-database to add tables (code first migration)  
 **6.** Make any changes you like or help with issues that I find  
+**7.** Don't forget to use Azure Vault or local secretes for connection strings and SSO
   
     
     
